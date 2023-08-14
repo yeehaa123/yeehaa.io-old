@@ -1,15 +1,24 @@
 ---
+import Base from "../layouts/base.astro";
+import Header from "../components/Header.svelte";
+import { getCollection, getEntry } from "astro:content";
+const entries = await getCollection("Home");
+const rawSections = await Promise.all(
+  entries
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async (e) => {
+      return e.render();
+    })
+);
+const [header, ...sections] = rawSections;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  {
+    sections.map(({ Content, remarkPluginFrontmatter: { title, order } }, index) => (
+      <section id={title}>
+        <Content />
+      </section>
+    ))
+  }
+</Base>
