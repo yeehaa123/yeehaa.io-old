@@ -4,7 +4,7 @@ import { visit } from 'unist-util-visit';
 import section from "@hbsnow/rehype-sectionize";
 import unwrapImages from 'remark-unwrap-images';
 import svelte from "@astrojs/svelte";
-import slugify from "../../utils/slugify.ts";
+import slugify from "./src/utils/slugify";
 
 function transformer(ast) {
   visit(ast, 'link', visitor);
