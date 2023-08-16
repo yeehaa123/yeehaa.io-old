@@ -1,10 +1,7 @@
 ---
-import Base from "../layouts/base.astro";
-import Header from "../components/Header.svelte";
-import Tagline from "../components/Tagline.svelte";
-import Blob1 from "../components/blobs/Blob1.astro";
-import Blob2 from "../components/blobs/Blob2.astro";
+import Base from "../layouts/home.astro";
 import Blob3 from "../components/blobs/Blob3.astro";
+import Blob4 from "../components/blobs/Blob4.astro";
 import "../styles/homepage/index.css";
 import { getCollection, getEntry } from "astro:content";
 const entries = await getCollection("Home");
@@ -15,26 +12,38 @@ const rawSections = await Promise.all(
       return e.render();
     })
 );
-const [tagline, proposition, problem, ...sections] = rawSections;
+const [tagline, proposition, problem, principles, cases, cta] = rawSections;
 ---
 
 <Base>
-  <header id="tagline">
+  <header id="tagline" slot="hero">
     <hgroup class="content quote">
       <tagline.Content />
     </hgroup>
   </header>
-  <Blob1 />
-  <section id="proposition">
+  <section id="proposition" slot="one">
     <div class="content">
       <proposition.Content />
     </div>
   </section>
-  <Blob2 />
-  <section id="problem">
+  <section id="problem" slot="two">
     <div class="content quote">
       <problem.Content />
     </div>
   </section>
-  <Blob3 />
+  <section id="principles" slot="three">
+    <div class="content">
+      <principles.Content />
+    </div>
+  </section>
+  <section id="cases" slot="four">
+    <div class="content">
+      <cases.Content />
+    </div>
+  </section>
+  <section id="call-to-action" slot="five">
+    <div class="content">
+      <cta.Content />
+    </div>
+  </section>
 </Base>
