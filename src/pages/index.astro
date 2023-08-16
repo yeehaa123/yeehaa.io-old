@@ -4,6 +4,7 @@ import Header from "../components/Header.svelte";
 import Tagline from "../components/Tagline.svelte";
 import Blob1 from "../components/blobs/Blob1.astro";
 import Blob2 from "../components/blobs/Blob2.astro";
+import Blob3 from "../components/blobs/Blob3.astro";
 import "../styles/homepage/index.css";
 import { getCollection, getEntry } from "astro:content";
 const entries = await getCollection("Home");
@@ -35,4 +36,5 @@ const [tagline, proposition, problem, ...sections] = rawSections;
       <problem.Content />
     </div>
   </section>
+  <Blob3 />
 </Base>
