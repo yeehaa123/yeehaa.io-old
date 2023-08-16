@@ -31,8 +31,6 @@ Creating an ecosystem of high trust by sharing vulnerabilities rather than accom
 
 ### [Rizom](../Cases/Rizom.md)
 
-````
 Using engagement Loops to enhance the collective brain power
-````
 
 [Connect](../About.md)

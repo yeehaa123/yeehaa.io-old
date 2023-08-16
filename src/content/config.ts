@@ -9,6 +9,13 @@ const homeCollection = defineCollection({
   }),
 });
 
+const aboutCollection = defineCollection({
+  type: "content", // v2.5.0 and later
+  schema: z.object({
+    order: z.number(),
+  }),
+});
+
 const postsCollection = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
@@ -22,6 +29,7 @@ const postsCollection = defineCollection({
 
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
+  About: aboutCollection,
   Home: homeCollection,
   Posts: postsCollection,
 };

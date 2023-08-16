@@ -1,9 +1,3 @@
----
-import Base from "../layouts/base.astro";
-import Header from "../components/Header.svelte";
-import { getCollection, getEntry } from "astro:content";
-const entries = await getCollection("Posts");
-
 function slugify(str) {
   return String(str)
     .normalize("NFKD") // split accented characters into their base characters and diacritical marks
@@ -15,18 +9,5 @@ function slugify(str) {
     .replace(/20/g, "-")
     .replace(/-+/g, "-"); // remove consecutive hyphens
 }
----
 
-<Base>
-  <ul>
-    {
-      entries.map(({ data }) => (
-        <li>
-          <a href={`/posts/${slugify(data.title)}`} id={data.title}>
-            {data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</Base>
+export default slugify;

@@ -1,34 +1,34 @@
-@import '@fontsource/londrina-solid/300.css';
-@import '@fontsource/montserrat-alternates/400.css';
-@import '@fontsource/montserrat-alternates/700.css';
-@import '@fontsource/montserrat-alternates/900.css';
+@import "@fontsource/londrina-solid/300.css";
+@import "@fontsource/montserrat-alternates/400.css";
+@import "@fontsource/montserrat-alternates/700.css";
+@import "@fontsource/montserrat-alternates/900.css";
 
 :root {
-	--sun: #f9a505;
-	--purp: #773670;
-	--curtains: #2e0016;
-	--dark: #0f0d0d;
-	--white: #ffffff;
-	--fire: #e14616;
+  --sun: #f9a505;
+  --purp: #773670;
+  --curtains: #2e0016;
+  --dark: #0f0d0d;
+  --white: #ffffff;
+  --fire: #e14616;
 }
 
 html,
 body {
-	--font-sans: 'Montserrat Alternates', sans-serif;
-	--font-accent: 'Londrina Solid', sans-serif;
-	height: 100%;
-	background-color: var(--curtains);
-	font-family: var(--font-sans);
+  --font-sans: "Montserrat Alternates", sans-serif;
+  --font-accent: "Londrina Solid", sans-serif;
+  height: 100%;
+  background-color: var(--curtains);
+  font-family: var(--font-sans);
 }
 
 a {
-	color: var(--white);
+  color: var(--white);
 }
 a:visited {
-	color: var(--white);
+  color: var(--white);
 }
 
 a:hover {
-	text-decoration: none;
-	color: var(--sun);
+  text-decoration: none;
+  color: var(--sun);
 }

@@ -2,6 +2,7 @@
 import "open-props/normalize";
 import "../styles/global.css";
 import Header from "../components/Header.svelte";
+import Footer from "../components/Footer.svelte";
 
 const navItems = [
   { pageName: "ABOUT", href: "/about" },
@@ -23,5 +24,6 @@ const navItems = [
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

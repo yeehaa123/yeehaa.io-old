@@ -1,6 +1,10 @@
 ---
 import Base from "../layouts/base.astro";
 import Header from "../components/Header.svelte";
+import Tagline from "../components/Tagline.svelte";
+import Blob1 from "../components/blobs/Blob1.astro";
+import Blob2 from "../components/blobs/Blob2.astro";
+import "../styles/homepage/index.css";
 import { getCollection, getEntry } from "astro:content";
 const entries = await getCollection("Home");
 const rawSections = await Promise.all(
@@ -10,15 +14,25 @@ const rawSections = await Promise.all(
       return e.render();
     })
 );
-const [header, ...sections] = rawSections;
+const [tagline, proposition, problem, ...sections] = rawSections;
 ---
 
 <Base>
-  {
-    sections.map(({ Content, remarkPluginFrontmatter: { title, order } }, index) => (
-      <section id={title}>
-        <Content />
-      </section>
-    ))
-  }
+  <header id="tagline">
+    <hgroup class="content quote">
+      <tagline.Content />
+    </hgroup>
+  </header>
+  <Blob1 />
+  <section id="proposition">
+    <div class="content">
+      <proposition.Content />
+    </div>
+  </section>
+  <Blob2 />
+  <section id="problem">
+    <div class="content quote">
+      <problem.Content />
+    </div>
+  </section>
 </Base>
