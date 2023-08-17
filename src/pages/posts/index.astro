@@ -1,7 +1,6 @@
 ---
 import Base from "../../layouts/base.astro";
-import Header from "../../components/Header.svelte";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 const entries = await getCollection("Posts");
 ---
 

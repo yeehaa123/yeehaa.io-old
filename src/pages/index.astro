@@ -1,9 +1,7 @@
 ---
 import Base from "../layouts/home.astro";
-import Blob3 from "../components/blobs/Blob3.astro";
-import Blob4 from "../components/blobs/Blob4.astro";
 import "../styles/homepage/index.css";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 const entries = await getCollection("Home");
 const rawSections = await Promise.all(
   entries

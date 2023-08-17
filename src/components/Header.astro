@@ -1,4 +1,11 @@
 ---
+interface NavItem {
+  href: string;
+  pageName: string;
+}
+interface Props {
+  navItems: NavItem[];
+}
 import Logo from "./Logo.astro";
 import NavLink from "./NavLink.astro";
 const { navItems } = Astro.props;

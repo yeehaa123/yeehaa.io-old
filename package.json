@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "check": "astro check && tsc --noEmit",
+    "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -18,7 +19,8 @@
     "postcss": "^8.4.6",
     "postcss-jit-props": "^1.0.4",
     "postcss-preset-env": "^9.1.1",
-    "remark-unwrap-images": "^3.0.1"
+    "remark-unwrap-images": "^3.0.1",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@astrojs/vercel": "^3.8.1",
