@@ -15,7 +15,7 @@ Here are some examples of Yeehaa’s principles in action
 
 Technology as a vessel of transformation that enables the organization to reframe work and processes.
 
-[Connect](../About.md)
+[view case](../About.md)
 
 ### Case 2
 
