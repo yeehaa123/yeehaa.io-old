@@ -3,7 +3,6 @@ import vercel from '@astrojs/vercel/static';
 import { visit } from 'unist-util-visit';
 import section from "@hbsnow/rehype-sectionize";
 import unwrapImages from 'remark-unwrap-images';
-import svelte from "@astrojs/svelte";
 import slugify from "./src/utils/slugify";
 
 function transformer(ast) {
@@ -46,7 +45,6 @@ export default defineConfig({
     remarkPlugins: [links, unwrapImages],
     rehypePlugins: [section]
   },
-  integrations: [svelte()],
   output: 'static',
   adapter: vercel()
 });
