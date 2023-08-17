@@ -22,13 +22,13 @@ body {
 }
 
 a {
-  color: var(--white);
+  color: var(--purp);
 }
 a:visited {
-  color: var(--white);
+  color: var(--purp);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--sun);
+  color: var(--white);
 }

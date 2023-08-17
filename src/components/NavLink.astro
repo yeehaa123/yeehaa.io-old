@@ -1,0 +1,45 @@
+---
+const { href } = Astro.props;
+---
+
+<li>
+  <svg viewBox="0 0 172 59">
+    <path
+      d="M1.61575 58.5895L170.395 57.8175C171.375 57.8136 172.123 57.0771 171.983 56.254L163.608 7.13015C163.497 6.48031 162.856 5.98801 162.085 5.96044L6.10277 0.159158C5.22952 0.12765 4.48167 0.690844 4.42593 1.43127L0.00393677 57.1283C-0.0610962 57.9199 0.686752 58.5895 1.62039 58.5855L1.61575 58.5895Z"
+    ></path>
+  </svg>
+  <a {href}>
+    <slot />
+  </a>
+</li>
+
+<style>
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: var(--curtains);
+    }
+
+    a {
+      color: var(--white);
+      position: absolute;
+      font-weight: var(--font-weight-3);
+    }
+
+    a:visited {
+      color: var(--white);
+    }
+
+    &:hover svg {
+      fill: var(--purp);
+    }
+
+    &:hover a {
+      color: var(--sun);
+    }
+  }
+</style>

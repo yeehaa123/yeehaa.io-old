@@ -31,3 +31,20 @@
     }
   }
 }
+.with-intro {
+  > p:first-of-type,
+  > p:nth-of-type(2) {
+    grid-column: span 4;
+    text-align: center;
+    line-height: var(--font-lineheight-2);
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-9);
+  }
+  > p:last-of-type::after {
+    display: block;
+    content: "..";
+    line-height: 0.5;
+    font-size: var(--font-size-8);
+    letter-spacing: var(--font-letterspacing-4);
+  }
+}

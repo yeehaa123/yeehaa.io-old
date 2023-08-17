@@ -9,9 +9,12 @@
 
     h3 {
       display: block;
-      color: var(--white);
       font-size: var(--font-size-4);
       margin-block: var(--size-5);
+    }
+
+    a {
+      color: var(--white);
     }
 
     img {
@@ -27,20 +30,6 @@
       max-inline-size: var(--size-md);
       margin-inline: auto;
       grid-column: span 3;
-      text-align: center;
-      line-height: var(--font-lineheight-2);
-      font-size: var(--font-size-5);
-      font-weight: var(--font-weight-7);
-      padding-block: var(--size-9);
-    }
-
-    > p:first-of-type::after {
-      display: block;
-      content: "..";
-      text-align: center;
-      line-height: 0.5;
-      font-size: var(--font-size-8);
-      letter-spacing: var(--font-letterspacing-4);
     }
 
     h2 {

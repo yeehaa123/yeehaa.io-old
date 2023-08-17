@@ -7,10 +7,6 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--size-9);
 
-    a {
-      color: var(--purp);
-    }
-
     h2 {
       display: block;
       order: 1;
@@ -24,17 +20,6 @@
     > p:first-of-type,
     > p:nth-of-type(2) {
       grid-column: span 4;
-      text-align: center;
-      line-height: var(--font-lineheight-2);
-      font-size: var(--font-size-5);
-      font-weight: var(--font-weight-9);
-    }
-    > p:nth-of-type(2)::after {
-      display: block;
-      content: "..";
-      line-height: 0.5;
-      font-size: var(--font-size-8);
-      letter-spacing: var(--font-letterspacing-4);
     }
 
     section {

@@ -2,16 +2,15 @@
 import Base from "../../layouts/base.astro";
 import Header from "../../components/Header.svelte";
 import { getCollection, getEntry } from "astro:content";
-import slugify from "../../utils/slugify.ts";
 const entries = await getCollection("Posts");
 ---
 
 <Base>
   <ul>
     {
-      entries.map(({ data }) => (
+      entries.map(({ data, slug }) => (
         <li>
-          <a href={`/posts/${slugify(data.title)}`} id={data.title}>
+          <a href={`/posts/${slug}`} id={data.title}>
             {data.title}
           </a>
         </li>
