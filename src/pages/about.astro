@@ -6,7 +6,9 @@ const rawSections = await Promise.all(
   entries
     .sort((a, b) => a.data.order - b.data.order)
     .map(async (e) => {
-      return e.render();
+      let x = await e.render();
+      console.log(x);
+      return { Content: x.Content, ...e };
     })
 );
 const [...sections] = rawSections;
@@ -15,7 +17,7 @@ const [...sections] = rawSections;
 <Base>
   <article>
     {
-      sections.map(({ Content, remarkPluginFrontmatter: { title } }) => (
+      sections.map(({ Content, data: { title }, ...rest }) => (
         <section id={title}>
           <Content />
         </section>

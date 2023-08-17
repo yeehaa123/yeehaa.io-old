@@ -2,24 +2,25 @@
   background-color: var(--sun);
   color: var(--curtains);
 
-  .content {
+  > * {
+    padding-inline: var(--size-7);
+  }
+
+  > section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--size-9);
 
     h2 {
+      display: none;
+    }
+
+    h3 {
       display: block;
       order: 1;
-      color: var(--purp);
-      font-size: var(--font-size-5);
       padding-block: var(--size-6);
       max-width: 100%;
       padding-inline: var(--size-6);
-    }
-
-    > p:first-of-type,
-    > p:nth-of-type(2) {
-      grid-column: span 4;
     }
 
     section {

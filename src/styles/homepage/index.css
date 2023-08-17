@@ -6,13 +6,21 @@
 @import "./cases.css";
 @import "./call_to_action.css";
 
-.content {
-  max-inline-size: var(--size-lg);
-  margin-inline: auto;
-  padding-inline: var(--size-7);
+h3 {
+  font-size: var(--font-size-5);
 }
 
-.quote {
+h4 {
+  font-size: var(--font-size-4);
+}
+
+.is-container > * {
+  max-inline-size: var(--size-lg);
+  margin-inline: auto;
+}
+
+.has-quote,
+.has-quote {
   p {
     padding-block: var(--size-9);
     color: var(--white, #fff);
@@ -31,7 +39,8 @@
     }
   }
 }
-.with-intro {
+
+section.with-intro {
   > p:first-of-type,
   > p:nth-of-type(2) {
     grid-column: span 4;
@@ -46,5 +55,9 @@
     line-height: 0.5;
     font-size: var(--font-size-8);
     letter-spacing: var(--font-letterspacing-4);
+  }
+
+  > p:last-of-type {
+    padding-block: var(--size-9);
   }
 }

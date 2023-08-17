@@ -1,4 +1,8 @@
 #problem {
   background-color: var(--fire);
   color: var(--white);
+
+  > * {
+    padding-inline: var(--size-7);
+  }
 }

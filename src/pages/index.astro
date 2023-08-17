@@ -15,33 +15,23 @@ const [tagline, proposition, problem, principles, cases, cta] = rawSections;
 
 <Base>
   <header id="tagline" slot="hero">
-    <hgroup class="content quote">
+    <hgroup class="has-quote is-container">
       <tagline.Content />
     </hgroup>
   </header>
-  <section id="proposition" slot="one">
-    <div class="content with-intro">
-      <proposition.Content />
-    </div>
+  <section id="proposition" class="with-intro is-container" slot="one">
+    <proposition.Content />
   </section>
-  <section id="problem" slot="two">
-    <div class="content quote">
-      <problem.Content />
-    </div>
+  <section id="problem" class="has-quote is-container" slot="two">
+    <problem.Content />
   </section>
-  <section id="principles" slot="three">
-    <div class="content with-intro">
-      <principles.Content />
-    </div>
+  <section id="principles" class="with-intro is-container" slot="three">
+    <principles.Content />
   </section>
-  <section id="cases" slot="four">
-    <div class="content with-intro">
-      <cases.Content />
-    </div>
+  <section id="cases" class="with-intro is-container" slot="four">
+    <cases.Content />
   </section>
   <section id="call-to-action" slot="five">
-    <div class="content">
-      <cta.Content />
-    </div>
+    <cta.Content />
   </section>
 </Base>

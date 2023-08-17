@@ -2,7 +2,15 @@
   color: var(--white);
   background: var(--purp);
 
-  .content {
+  > * {
+    padding-inline: var(--size-7);
+  }
+
+  > section {
+    h2:first-child {
+      display: none;
+    }
+
     flex-direction: column;
     display: flex;
     align-items: center;
