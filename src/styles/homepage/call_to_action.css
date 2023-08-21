@@ -1,7 +1,6 @@
 #call-to-action {
   background-color: var(--sun);
   color: var(--curtains);
-  padding-block-start: var(--size-7);
 
   p {
     color: var(--curtains, #fff);

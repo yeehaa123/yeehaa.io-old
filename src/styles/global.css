@@ -32,3 +32,54 @@ a:hover {
   text-decoration: none;
   color: var(--white);
 }
+
+.is-container > * {
+  max-inline-size: var(--size-lg);
+  margin-inline: auto;
+  padding-inline: var(--size-7);
+}
+
+h3 {
+  font-size: var(--font-size-5);
+}
+
+h4 {
+  font-size: var(--font-size-4);
+}
+
+.has-quote,
+.has-quote {
+  p {
+    padding-block: var(--size-9);
+    color: var(--white, #fff);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: var(--font-size-fluid-2);
+    font-style: normal;
+    font-weight: var(--font-weight-7);
+    line-height: var(--font-lineheight-3);
+    letter-spacing: var(--font-letterspacing-2);
+  }
+}
+
+section.with-intro {
+  > p:first-of-type,
+  > p:nth-of-type(2) {
+    grid-column: span 4;
+    text-align: center;
+    line-height: var(--font-lineheight-2);
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-9);
+  }
+  > p:last-of-type::after {
+    display: block;
+    content: "..";
+    line-height: 0.5;
+    font-size: var(--font-size-8);
+    letter-spacing: var(--font-letterspacing-4);
+  }
+
+  > p:last-of-type {
+    padding-block: var(--size-9);
+  }
+}

@@ -1,6 +1,6 @@
 ---
-order: 5
 title: Benefits
+order: 9
 ---
 
 * Instead of approaching things hierarchically your team can start change 1 small experiment at the time.

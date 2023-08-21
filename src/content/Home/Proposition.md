@@ -3,31 +3,31 @@ title: Proposition
 order: 2
 ---
 
-Yeehaa is an [ecosystem architect](../Ideas/Ecosystem%20Architecture.md). Designing virtual spaces for high-trust networks through a variety of approaches 
+Yeehaa is an [ecosystem architect](../../Notes/Ecosystem%20Architecture.md). Designing virtual spaces for high-trust networks through a variety of approaches 
 
 including
 
 ## Propositions
 
-### [Value Driven Development](../Posts/Value%20Driven%20Development.md)
+### [Value Driven Development](../Work/Value%20Driven%20Development.md)
 
 ![VDD.svg](../images/VDD.svg)
 
 Introduction of tools and techniques to make the ethics of a practice measurable, reproducible, and communicable.
 
-### [Vessel of Transformation](../Ideas/Vessel%20of%20Transformation.md)
+### *Vessel of Transformation*
 
 ![VoT.svg](../images/VoT.svg)
 
 Unexpected, small, local and timely interventions that reinvigorate teams, organisations, and communities.
 
-### [Engagement Loops](../Ideas/Engagement%20Loops.md)
+### *Engagement Loops*
 
 ![EL.svg](../images/EL.svg)
 
 Tailormade hooks that both stimulate users to actively participate as well as generate feedback data for future improvements.
 
-### [Organic Governance](../Ideas/Organic%20Governance.md)
+### *Organic Governance*
 
 ![OG.svg](../images/OG.svg)
 

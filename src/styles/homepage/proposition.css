@@ -21,6 +21,14 @@
       padding-block: var(--size-6);
       max-width: 100%;
       padding-inline: var(--size-6);
+      a,
+      em {
+        color: var(--purp);
+        font-style: normal;
+      }
+      a:hover {
+        color: var(--white);
+      }
     }
 
     section {

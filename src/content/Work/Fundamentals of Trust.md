@@ -5,6 +5,7 @@ excerpt: "On the internet, lacunas of trust are mostly countered by tightening\n
 tags:
 - blog
 draft: null
+category: post
 ---
 
 

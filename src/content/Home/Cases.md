@@ -1,6 +1,6 @@
 ---
-order: 5
 title: Cases
+order: 5
 ---
 
 Here are some examples of Yeehaa’s principles in action
@@ -25,7 +25,7 @@ Technology as a vessel of transformation that enables the organization to refram
 
 Creating an ecosystem of high trust by sharing vulnerabilities rather than accomplishments
 
-[Connect](../About.md)
+[view case](../About.md)
 
 ### Case 3
 
@@ -35,4 +35,4 @@ Creating an ecosystem of high trust by sharing vulnerabilities rather than accom
 
 Using engagement Loops to enhance the collective brain power
 
-[Connect](../About.md)
+[view case](../About.md)

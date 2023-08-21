@@ -9,7 +9,7 @@ const entries = await getCollection("Work");
     {
       entries.map(({ data, slug }) => (
         <li>
-          <a href={`/posts/${slug}`} id={data.title}>
+          <a href={`/output/${slug}`} id={data.title}>
             {data.title}
           </a>
         </li>

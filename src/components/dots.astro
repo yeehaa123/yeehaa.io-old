@@ -1,0 +1,23 @@
+---
+const { amount } = Astro.props;
+---
+
+<div class="dots">
+  {Array.from({ length: amount }, () => <div class="dot" />)}
+</div>
+
+<style>
+  .dots {
+    position: absolute;
+    top: 30px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: var(--curtains);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    width: 20px;
+  }
+</style>

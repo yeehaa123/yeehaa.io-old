@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/base.astro";
+import Dots from "../components/dots.astro";
+---
+
+<Base>
+  <slot name="hero" />
+  <section class="bubble bubble1">
+    <Dots amount={1} />
+    <slot name="one" />
+  </section>
+  <section class="bubble bubble2">
+    <Dots amount={2} />
+    <slot name="two" />
+  </section>
+  <section class="bubble bubble3">
+    <Dots amount={3} />
+    <slot name="three" />
+  </section>
+</Base>
+
+<style>
+  .bubble {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    padding: var(--size-9);
+    margin: var(--size-2);
+
+    :global(p) {
+      font-size: var(--font-size-2);
+      text-align: center;
+      color: var(--white);
+    }
+  }
+  .bubble1 {
+    background-color: var(--purp);
+  }
+  .bubble2 {
+    margin-top: -50px;
+    background-color: var(--purp);
+  }
+  .bubble3 {
+    background-color: var(--fire);
+    margin-top: 40px;
+  }
+</style>

@@ -31,5 +31,5 @@ const postsCollection = defineCollection({
 export const collections = {
   About: aboutCollection,
   Home: homeCollection,
-  Posts: postsCollection,
+  Work: postsCollection,
 };

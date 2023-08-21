@@ -1,35 +1,34 @@
 ---
-import Base from "../layouts/base.astro";
+import About from "../layouts/about.astro";
 import { getCollection } from "astro:content";
 const entries = await getCollection("About");
 const rawSections = await Promise.all(
   entries
     .sort((a, b) => a.data.order - b.data.order)
     .map(async (e) => {
-      let x = await e.render();
-      console.log(x);
-      return { Content: x.Content, ...e };
+      return e.render();
     })
 );
-const [...sections] = rawSections;
+const [opening, background, context, conflict] = rawSections;
 ---
 
-<Base>
-  <article>
-    {
-      sections.map(({ Content, data: { title }, ...rest }) => (
-        <section id={title}>
-          <Content />
-        </section>
-      ))
-    }
-  </article>
-</Base>
+<About>
+  <header id="tagline" slot="hero">
+    <hgroup class="has-quote is-container">
+      <opening.Content />
+    </hgroup>
+  </header>
+  <background.Content slot="one" />
+  <context.Content slot="two" />
+  <conflict.Content slot="three" />
+</About>
 
 <style>
-  article {
-    max-inline-size: var(--size-md);
-    margin-inline: auto;
-    padding-block: var(--padding-block, var(--size-10));
+  #tagline {
+    hgroup.has-quote {
+      :global(p a:visited) {
+        color: var(--sun);
+      }
+    }
   }
 </style>

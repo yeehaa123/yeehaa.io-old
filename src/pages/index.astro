@@ -1,5 +1,5 @@
 ---
-import Base from "../layouts/home.astro";
+import Home from "../layouts/home.astro";
 import "../styles/homepage/index.css";
 import { getCollection } from "astro:content";
 const entries = await getCollection("Home");
@@ -13,7 +13,7 @@ const rawSections = await Promise.all(
 const [tagline, proposition, problem, principles, cases, cta] = rawSections;
 ---
 
-<Base>
+<Home>
   <header id="tagline" slot="hero">
     <hgroup class="has-quote is-container">
       <tagline.Content />
@@ -34,4 +34,4 @@ const [tagline, proposition, problem, principles, cases, cta] = rawSections;
   <section id="call-to-action" slot="five">
     <cta.Content />
   </section>
-</Base>
+</Home>

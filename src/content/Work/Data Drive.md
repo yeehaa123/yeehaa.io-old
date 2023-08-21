@@ -5,6 +5,7 @@ excerpt: "Another trip down memory lane. I rediscovered this short text \nsomewh
 tags:
 - blog
 draft: null
+ca: post
 ---
 
 

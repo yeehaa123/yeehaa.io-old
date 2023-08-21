@@ -1,6 +1,6 @@
 ---
-order: 4
 title: Principles
+order: 4
 ---
 
 Yeehaa singular approach to create innovative ecosystems is built upon the following principles

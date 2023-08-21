@@ -1,5 +1,6 @@
 ---
-order: 4
+title: Process
+order: 8
 ---
 
 * He starts with a big common vision and identifies win-wins.

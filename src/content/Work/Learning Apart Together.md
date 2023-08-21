@@ -10,6 +10,7 @@ excerpt: |
 tags:
 - blog
 draft: null
+category: post
 ---
 
 

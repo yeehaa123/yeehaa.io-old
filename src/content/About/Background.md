@@ -1,0 +1,6 @@
+---
+order: 2
+title: Background
+---
+
+15 years ago he was an established *philosophy professor* and on the side a passionate developer.
