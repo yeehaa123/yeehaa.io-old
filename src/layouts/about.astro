@@ -6,7 +6,7 @@ import Dots from "../components/dots.astro";
 <Base>
   <slot name="hero" />
   <section class="bubble bubble1">
-    <Dots amount={1} />
+    <Dots top="35px" amount={1} />
     <slot name="one" />
   </section>
   <section class="bubble bubble2">
@@ -17,10 +17,27 @@ import Dots from "../components/dots.astro";
     <Dots amount={3} />
     <slot name="three" />
   </section>
+  <section class="raw">
+    <Dots amount={4} color="var(--fire)" />
+    <slot name="four" />
+  </section>
+  <slot name="five" />
 </Base>
 
 <style>
   @import "open-props/media";
+  .raw {
+    position: relative;
+    color: var(--fire);
+    padding-block: var(--size-9);
+    padding-inline: var(--size-6);
+    margin: var(--size-2);
+    :global(p) {
+      font-size: var(--font-size-4);
+      font-weight: var(--font-weight-7);
+      margin-block-start: var(--size-3);
+    }
+  }
   .bubble {
     position: relative;
     display: flex;
@@ -38,20 +55,41 @@ import Dots from "../components/dots.astro";
       text-align: left;
       color: var(--white);
     }
+    :global(strong) {
+      display: block;
+      font-size: var(--font-size-5);
+      font-weight: var(--font-weight-7);
+    }
     :global(ul, li) {
       color: var(--white);
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+      list-style-type: 0;
+    }
+
+    :global(ul) {
+      padding-block-start: var(--size-5);
     }
   }
   .bubble1 {
     background-color: var(--purp);
+    :global(p) {
+      font-size: var(--font-size-3);
+    }
   }
   .bubble2 {
+    margin-top: 25px;
     background-color: var(--purp);
+    :global(p) {
+    }
   }
   .bubble3 {
     background-color: var(--fire);
     aspect-ratio: auto;
     border-radius: 100%/50%;
+    margin-top: -75px;
+    padding-block: var(--size-11);
     :global(p, ul, li) {
       font-size: var(--font-size-1);
     }
