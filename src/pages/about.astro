@@ -9,7 +9,7 @@ const rawSections = await Promise.all(
       return e.render();
     })
 );
-const [opening, background, context, conflict] = rawSections;
+const [opening, background, context, flaws, conflict, problem] = rawSections;
 ---
 
 <About>
@@ -20,7 +20,9 @@ const [opening, background, context, conflict] = rawSections;
   </header>
   <background.Content slot="one" />
   <context.Content slot="two" />
-  <conflict.Content slot="three" />
+  <flaws.Content slot="three" />
+  <conflict.Content slot="four" />
+  <problem.Content slot="five" />
 </About>
 
 <style>

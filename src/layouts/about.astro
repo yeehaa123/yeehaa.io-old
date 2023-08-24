@@ -20,6 +20,7 @@ import Dots from "../components/dots.astro";
 </Base>
 
 <style>
+  @import "open-props/media";
   .bubble {
     position: relative;
     display: flex;
@@ -28,13 +29,16 @@ import Dots from "../components/dots.astro";
     align-items: center;
     border-radius: 50%;
     overflow: hidden;
-    aspect-ratio: 1/1;
     padding: var(--size-9);
     margin: var(--size-2);
 
+    aspect-ratio: 1/1;
     :global(p) {
-      font-size: var(--font-size-2);
-      text-align: center;
+      font-size: var(--font-size-1);
+      text-align: left;
+      color: var(--white);
+    }
+    :global(ul, li) {
       color: var(--white);
     }
   }
@@ -42,11 +46,18 @@ import Dots from "../components/dots.astro";
     background-color: var(--purp);
   }
   .bubble2 {
-    margin-top: -50px;
     background-color: var(--purp);
   }
   .bubble3 {
     background-color: var(--fire);
-    margin-top: 40px;
+    aspect-ratio: auto;
+    border-radius: 100%/50%;
+    :global(p, ul, li) {
+      font-size: var(--font-size-1);
+    }
+    @media (--md-n-above) {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
   }
 </style>
