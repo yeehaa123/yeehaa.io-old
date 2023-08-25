@@ -1,0 +1,43 @@
+@import "open-props/media";
+@import "./bubbles.css";
+
+header {
+  .has-quote {
+    p a:visited {
+      color: var(--sun);
+    }
+  }
+}
+
+@media (--md-n-above) {
+  article {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+  }
+
+  .is-container {
+    grid-column: span 5;
+  }
+  .bubble {
+    padding: var(--size-9);
+  }
+  strong {
+    font-size: var(--font-size-5);
+  }
+
+  .bubble1 {
+    grid-column: span 3;
+  }
+  .bubble2 {
+    margin-top: -100px;
+    grid-column: 3 / span 3;
+  }
+  .bubble3 {
+    margin-top: 0px;
+    grid-column: span 4;
+  }
+  .bubbleless {
+    margin-top: -25px;
+    grid-column: 3 / span 3;
+  }
+}

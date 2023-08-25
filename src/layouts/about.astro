@@ -1,101 +1,34 @@
 ---
 import Base from "../layouts/base.astro";
 import Dots from "../components/dots.astro";
+import "../styles/about/index.css";
 ---
 
 <Base>
-  <slot name="hero" />
-  <section class="bubble bubble1">
-    <Dots top="35px" amount={1} />
-    <slot name="one" />
-  </section>
-  <section class="bubble bubble2">
-    <Dots amount={2} />
-    <slot name="two" />
-  </section>
-  <section class="bubble bubble3">
-    <Dots amount={3} />
-    <slot name="three" />
-  </section>
-  <section class="raw">
-    <Dots amount={4} color="var(--fire)" />
-    <slot name="four" />
-  </section>
-  <slot name="five" />
+  <article>
+    <header id="tagline" slot="hero" class="is-container">
+      <hgroup class="has-quote">
+        <slot name="hero" />
+      </hgroup>
+    </header>
+    <section class="bubble bubble1">
+      <Dots top="35px" amount={1} />
+      <slot name="one" />
+    </section>
+    <section class="bubble bubble2">
+      <Dots amount={2} />
+      <slot name="two" />
+    </section>
+    <section class="bubble bubble3">
+      <Dots amount={3} />
+      <slot name="three" />
+    </section>
+    <section class="bubble bubbleless">
+      <Dots amount={4} color="var(--fire)" />
+      <slot name="four" />
+    </section>
+    <section class="has-quote is-container" slot="five">
+      <slot name="five" />
+    </section>
+  </article>
 </Base>
-
-<style>
-  @import "open-props/media";
-  .raw {
-    position: relative;
-    color: var(--fire);
-    padding-block: var(--size-9);
-    padding-inline: var(--size-6);
-    margin: var(--size-2);
-    :global(p) {
-      font-size: var(--font-size-4);
-      font-weight: var(--font-weight-7);
-      margin-block-start: var(--size-3);
-    }
-  }
-  .bubble {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-    padding: var(--size-9);
-    margin: var(--size-2);
-
-    aspect-ratio: 1/1;
-    :global(p) {
-      font-size: var(--font-size-1);
-      text-align: left;
-      color: var(--white);
-    }
-    :global(strong) {
-      display: block;
-      font-size: var(--font-size-5);
-      font-weight: var(--font-weight-7);
-    }
-    :global(ul, li) {
-      color: var(--white);
-      margin: 0;
-      padding: 0;
-      text-indent: 0;
-      list-style-type: 0;
-    }
-
-    :global(ul) {
-      padding-block-start: var(--size-5);
-    }
-  }
-  .bubble1 {
-    background-color: var(--purp);
-    :global(p) {
-      font-size: var(--font-size-3);
-    }
-  }
-  .bubble2 {
-    margin-top: 25px;
-    background-color: var(--purp);
-    :global(p) {
-    }
-  }
-  .bubble3 {
-    background-color: var(--fire);
-    aspect-ratio: auto;
-    border-radius: 100%/50%;
-    margin-top: -75px;
-    padding-block: var(--size-11);
-    :global(p, ul, li) {
-      font-size: var(--font-size-1);
-    }
-    @media (--md-n-above) {
-      aspect-ratio: 1/1;
-      border-radius: 50%;
-    }
-  }
-</style>
