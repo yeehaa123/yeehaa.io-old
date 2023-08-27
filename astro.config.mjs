@@ -4,7 +4,7 @@ import { visit } from 'unist-util-visit';
 import section from "@hbsnow/rehype-sectionize";
 import unwrapImages from 'remark-unwrap-images';
 import slugify from "./src/utils/slugify";
-
+import mdx from "@astrojs/mdx";
 function transformer(ast) {
   visit(ast, 'link', visitor);
   function visitor(node) {
@@ -46,5 +46,6 @@ export default defineConfig({
     rehypePlugins: [section]
   },
   output: 'static',
-  adapter: vercel()
+  adapter: vercel(),
+  integrations: [mdx()]
 });

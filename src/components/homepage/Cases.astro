@@ -1,0 +1,16 @@
+---
+import Section from "../Section.astro";
+import PropSection from "./cases/Section.astro";
+const { Content, slug } = Astro.props;
+---
+
+<Section id={slug} hasIntro elementType="section" backgroundColor="sun" foregroundColor="curtains">
+  <Content components={{ section: PropSection }} />
+</Section>
+
+<style>
+  > :global(p:first-of-type) {
+    max-inline-size: var(--size-md);
+    margin-inline: auto;
+  }
+</style>

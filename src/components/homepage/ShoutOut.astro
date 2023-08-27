@@ -1,0 +1,14 @@
+---
+import Section from "../Section.astro";
+import Heading from "./Heading.astro";
+const { Content, slug, backgroundColor = "curtains", foregroundColor = "white" } = Astro.props;
+---
+
+<Section
+  id={slug}
+  elementType={slug === "tagline" ? "hgroup" : "section"}
+  {backgroundColor}
+  {foregroundColor}
+>
+  <Content components={{ p: Heading }} />
+</Section>

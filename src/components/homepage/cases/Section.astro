@@ -1,0 +1,36 @@
+---
+const props = Astro.props;
+const rank = Number(props["data-heading-rank"]);
+import Card from "./Card.astro";
+import CardContent from "./CardContent.astro";
+const sections = {
+  2: { Element: "section", className: "container" },
+  3: { Element: Card, className: "card" },
+  4: { Element: CardContent, className: "card-content" },
+};
+const { Element, className } = sections[rank];
+---
+
+<Element class={className}><slot /></Element>
+
+<style>
+  @import "open-props/media";
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--size-8);
+
+    padding-block: var(--size-9);
+    :global(h2) {
+      display: none;
+    }
+  }
+  .card {
+    grid-column: span 3;
+  }
+  @media (--lg-n-above) {
+    .card {
+      grid-column: span 1;
+    }
+  }
+</style>

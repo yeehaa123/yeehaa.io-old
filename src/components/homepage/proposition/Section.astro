@@ -1,0 +1,33 @@
+---
+const props = Astro.props;
+import Highlight from "./Highlight.astro";
+const rank = Number(props["data-heading-rank"]);
+const sections = {
+  2: { Element: "section", className: "container" },
+  3: { Element: Highlight, className: "highlight" },
+};
+const { Element, className } = sections[rank];
+---
+
+<Element class={className}><slot /></Element>
+
+<style>
+  @import "open-props/media";
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--size-9);
+
+    :global(h2) {
+      display: none;
+    }
+  }
+  .highlight {
+    grid-column: span 4;
+  }
+  @media (--md-n-above) {
+    .highlight {
+      grid-column: span 2;
+    }
+  }
+</style>

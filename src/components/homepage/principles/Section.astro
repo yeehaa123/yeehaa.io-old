@@ -1,0 +1,21 @@
+---
+const props = Astro.props;
+const rank = Number(props["data-heading-rank"]);
+const sections = {
+  2: { Element: "section", className: "container" },
+};
+const { Element, className } = sections[rank];
+---
+
+<Element class={className}><slot /></Element>
+
+<style>
+  .container {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    :global(h2) {
+      display: none;
+    }
+  }
+</style>

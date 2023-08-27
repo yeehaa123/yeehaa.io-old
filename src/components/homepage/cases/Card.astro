@@ -1,0 +1,60 @@
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={[className]}><slot /></section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-5);
+    overflow: hidden;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin-block-end: var(--size-9);
+    max-inline-size: 330px;
+  }
+
+  section :global(a) {
+    color: var(--white);
+  }
+  section :global(h3:first-child) {
+    display: none;
+  }
+  section :global(img) {
+    aspect-ratio: 1/1;
+    transform: rotate(45deg);
+    border: 24px solid var(--sun);
+    border-radius: 110px;
+    z-index: 10;
+    margin-block-end: -100px;
+  }
+
+  section :global(h4) {
+    display: block;
+  }
+  section :global(.card-content) {
+    aspect-ratio: 1 / 1.5;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: var(--purp);
+    color: var(--white);
+    border-radius: 110px;
+    padding-inline: var(--size-7);
+    padding-block-start: 130px;
+
+    p:last-of-type {
+      position: absolute;
+      padding: var(--size-5);
+      bottom: var(--size-5);
+      a {
+        font-size: var(--font-size-5);
+        color: var(--sun);
+        font-weight: var(--font-weight-7);
+      }
+    }
+  }
+</style>

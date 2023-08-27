@@ -1,37 +1,34 @@
 ---
 import Home from "../layouts/home.astro";
 import "../styles/homepage/index.css";
+import Section from "../components/Section.astro";
+import ShoutOut from "../components/homepage/ShoutOut.astro";
+import Proposition from "../components/homepage/Proposition.astro";
+import Principles from "../components/homepage/Principles.astro";
+import Cases from "../components/homepage/Cases.astro";
 import { getCollection } from "astro:content";
 const entries = await getCollection("Home");
 const rawSections = await Promise.all(
   entries
     .sort((a, b) => a.data.order - b.data.order)
-    .map(async (e) => {
-      return e.render();
+    .map(async ({ slug, render }, index) => {
+      console.log(slug);
+      const rendered = await render();
+      return { slug, index, ...rendered };
     })
 );
 const [tagline, proposition, problem, principles, cases, cta] = rawSections;
 ---
 
 <Home>
-  <header id="tagline" slot="hero">
-    <hgroup class="has-quote is-container">
-      <tagline.Content />
-    </hgroup>
+  <header slot="hero">
+    <ShoutOut {...tagline} />
   </header>
-  <section id="proposition" class="with-intro is-container" slot="one">
-    <proposition.Content />
-  </section>
-  <section id="problem" class="has-quote is-container" slot="two">
-    <problem.Content />
-  </section>
-  <section id="principles" class="with-intro is-container" slot="three">
-    <principles.Content />
-  </section>
-  <section id="cases" class="with-intro is-container" slot="four">
-    <cases.Content />
-  </section>
-  <section id="call-to-action" slot="five">
+  <Proposition {...proposition} slot={proposition.index} />
+  <ShoutOut {...problem} slot={problem.index} backgroundColor="fire" />
+  <Principles {...principles} slot={principles.index} />
+  <Cases {...cases} slot={cases.index} />
+  <Section id="call-to-action" slot="5">
     <cta.Content />
-  </section>
+  </Section>
 </Home>

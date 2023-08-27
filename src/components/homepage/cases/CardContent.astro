@@ -1,0 +1,30 @@
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={[className]}><slot /></section>
+<style>
+  section {
+    aspect-ratio: 1 / 1.5;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: var(--purp);
+    color: var(--white);
+    border-radius: 110px;
+    padding-inline: var(--size-7);
+    padding-block-start: 130px;
+  }
+
+  section :global(p:last-of-type) {
+    position: absolute;
+    padding: var(--size-5);
+    bottom: var(--size-5);
+  }
+
+  section :global(p:last-of-type a) {
+    font-size: var(--font-size-5);
+    color: var(--sun);
+    font-weight: var(--font-weight-7);
+  }
+</style>

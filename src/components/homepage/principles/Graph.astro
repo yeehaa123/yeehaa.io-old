@@ -1,0 +1,31 @@
+<ul>
+  <slot />
+</ul>
+<style>
+  @import "open-props/media";
+  ul {
+    --width: 250px;
+    margin-block-start: var(--size-9);
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    background-color: var(--sun);
+    position: relative;
+    padding-inline-start: 0;
+    transform: scale(0.65);
+  }
+
+  @media (--md-n-above) {
+    ul {
+      transform: scale(1);
+      margin-block: var(--size-12);
+    }
+  }
+
+  @media (--lg-n-above) {
+    ul {
+      transform: scale(1.3);
+      margin-block-start: var(--size-13);
+    }
+  }
+</style>
