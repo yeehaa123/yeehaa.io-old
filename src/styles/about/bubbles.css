@@ -1,6 +1,7 @@
 @import "open-props/media";
 .bubble {
   position: relative;
+  container-type: size;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,39 +37,31 @@
     padding-block-start: var(--size-5);
   }
 
-  @media (--sm-n-above) {
+  @container (width > 300px) {
     padding-inline: var(--size-10);
-    p,
-    ul,
-    li {
-      font-size: var(--font-size-2);
-    }
-    strong {
-      font-size: var(--font-size-5);
-    }
-  }
-  @media (--md-n-above) {
     p,
     ul,
     li {
       font-size: var(--font-size-3);
     }
     strong {
-      font-size: var(--font-size-6);
+      font-size: var(--font-size-5);
     }
   }
 }
 
 .bubbleless {
+  position: relative;
   padding-inline: var(--size-6);
   color: var(--fire);
-  margin-top: 50px;
-  aspect-ratio: auto;
+  margin-top: 100px;
   border-radius: 0;
+  aspect-ratio: auto;
+
   p {
     font-size: var(--font-size-4);
     font-weight: var(--font-weight-7);
-    padding-block: var(--size-4);
+    padding-block: var(--size-10);
     margin-block-start: var(--size-3);
   }
 }
@@ -80,21 +73,14 @@
 .bubble2 {
   margin-top: -25px;
   background-color: var(--purp);
-  p {
-    font-size: var(--font-size-0);
-  }
   margin-top: -50px;
-  @media (--xs-n-above) {
-    p {
-      font-size: var(--font-size-1);
-    }
-  }
 }
 
 .bubble3 {
   background-color: var(--fire);
   aspect-ratio: auto;
   border-radius: 100%/50%;
+  aspect-ratio: 1/1.5;
   margin: 0;
   margin-top: 25px;
   padding-block: var(--size-11);
