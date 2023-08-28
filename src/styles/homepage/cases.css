@@ -1,7 +1,0 @@
-#cases {
-  > p:first-of-type {
-    max-inline-size: var(--size-md);
-    margin-inline: auto;
-    grid-column: span 3;
-  }
-}

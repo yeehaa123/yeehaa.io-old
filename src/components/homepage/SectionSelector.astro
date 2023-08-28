@@ -1,0 +1,36 @@
+---
+import Default from "../Section.astro";
+import Tagline from "./Tagline.astro";
+import Problem from "./Problem.astro";
+import Proposition from "./Proposition.astro";
+import Principles from "./Principles.astro";
+import CTA from "./CTA.astro";
+import Cases from "./Cases.astro";
+const props = Astro.props;
+
+let Section;
+switch (props.slug) {
+  case "tagline":
+    Section = Tagline;
+    break;
+  case "proposition":
+    Section = Proposition;
+    break;
+  case "problem-statement":
+    Section = Problem;
+    break;
+  case "principles":
+    Section = Principles;
+    break;
+  case "cases":
+    Section = Cases;
+    break;
+  case "call-to-action":
+    Section = CTA;
+    break;
+  default:
+    Section = Default;
+}
+---
+
+<Section {...props} />

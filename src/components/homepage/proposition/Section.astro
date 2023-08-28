@@ -2,11 +2,16 @@
 const props = Astro.props;
 import Highlight from "./Highlight.astro";
 const rank = Number(props["data-heading-rank"]);
-const sections = {
-  2: { Element: "section", className: "container" },
-  3: { Element: Highlight, className: "highlight" },
-};
-const { Element, className } = sections[rank];
+let section;
+switch (rank) {
+  case 3:
+    section = { Element: Highlight, className: "highlight" };
+    break;
+  default:
+    section = { Element: "section", className: "container" };
+}
+
+const { Element, className } = section;
 ---
 
 <Element class={className}><slot /></Element>

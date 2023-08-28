@@ -1,0 +1,26 @@
+---
+import ShoutOut from "./ShoutOut.astro";
+const props = Astro.props;
+---
+
+<>
+  <ShoutOut {...props} backgroundColor="fire" />
+  <svg class="blob blob3" viewBox="0 0 1728 258">
+    <g clip-path="url(#clip0_130_98)">
+      <path
+        d="M1728 0V257.9C1519.41 123.054 1209.32 37.5737 863.078 37.5737C516.84 37.5737 206.595 123.098 -2 258V0H1728Z"
+      ></path>
+    </g>
+  </svg>
+</>
+
+<style>
+  svg {
+    width: 100%;
+    background-color: var(--purp);
+  }
+
+  path {
+    fill: var(--fire);
+  }
+</style>

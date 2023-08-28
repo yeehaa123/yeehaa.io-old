@@ -1,13 +1,9 @@
 ---
 const props = Astro.props;
 const rank = Number(props["data-heading-rank"]);
-const sections = {
-  2: { Element: "section", className: "container" },
-};
-const { Element, className } = sections[rank];
 ---
 
-<Element class={className}><slot /></Element>
+<section class:list={[rank === 2 && "container"]}><slot /></section>
 
 <style>
   .container {

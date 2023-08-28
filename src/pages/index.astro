@@ -1,34 +1,18 @@
 ---
-import Home from "../layouts/home.astro";
-import "../styles/homepage/index.css";
-import Section from "../components/Section.astro";
-import ShoutOut from "../components/homepage/ShoutOut.astro";
-import Proposition from "../components/homepage/Proposition.astro";
-import Principles from "../components/homepage/Principles.astro";
-import Cases from "../components/homepage/Cases.astro";
+import Base from "../layouts/base.astro";
+import Section from "../components/homepage/SectionSelector.astro";
 import { getCollection } from "astro:content";
 const entries = await getCollection("Home");
-const rawSections = await Promise.all(
+const sections = await Promise.all(
   entries
     .sort((a, b) => a.data.order - b.data.order)
-    .map(async ({ slug, render }, index) => {
-      console.log(slug);
+    .map(async ({ slug, render }) => {
       const rendered = await render();
-      return { slug, index, ...rendered };
+      return { slug, ...rendered };
     })
 );
-const [tagline, proposition, problem, principles, cases, cta] = rawSections;
 ---
 
-<Home>
-  <header slot="hero">
-    <ShoutOut {...tagline} />
-  </header>
-  <Proposition {...proposition} slot={proposition.index} />
-  <ShoutOut {...problem} slot={problem.index} backgroundColor="fire" />
-  <Principles {...principles} slot={principles.index} />
-  <Cases {...cases} slot={cases.index} />
-  <Section id="call-to-action" slot="5">
-    <cta.Content />
-  </Section>
-</Home>
+<Base>
+  {sections.map((s) => <Section {...s} />)}
+</Base>

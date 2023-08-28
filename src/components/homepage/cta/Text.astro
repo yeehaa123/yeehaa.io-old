@@ -1,0 +1,41 @@
+<p>
+  <slot />
+</p>
+
+<style>
+  p {
+    color: var(--curtains, #fff);
+    text-align: center;
+    font-size: var(--font-size-fluid-2);
+    font-style: normal;
+    font-weight: var(--font-weight-7);
+    line-height: var(--font-lineheight-2);
+    letter-spacing: var(--font-letterspacing-2);
+  }
+
+  p :global(strong) {
+    font-weight: var(--font-weight-9);
+  }
+
+  p:nth-of-type(2) {
+    margin-block: var(--size-11);
+  }
+
+  p:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+  }
+
+  p:nth-of-type(3) :global(a) {
+    background-color: var(--purp);
+    color: var(--white);
+    text-align: center;
+    font-size: var(--font-size-fluid-2);
+    font-style: normal;
+    font-weight: var(--font-weight-7);
+    line-height: var(--font-lineheight-2);
+    letter-spacing: var(--font-letterspacing-2);
+    padding-block: var(--size-2);
+    padding-inline: var(--size-4);
+  }
+</style>
