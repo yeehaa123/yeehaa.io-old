@@ -1,10 +1,14 @@
 ---
+interface Props {
+  Content: any;
+  id: string;
+}
 import ShoutOut from "./ShoutOut.astro";
-const props = Astro.props;
+const { id, Content, ...props } = Astro.props;
 ---
 
 <>
-  <ShoutOut {...props} backgroundColor="fire" />
+  <ShoutOut {id} {Content} {...props} backgroundColor="fire" />
   <svg class="blob blob3" viewBox="0 0 1728 258">
     <g clip-path="url(#clip0_130_98)">
       <path

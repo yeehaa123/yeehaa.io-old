@@ -1,4 +1,11 @@
 ---
+interface Props {
+  hasIntro?: boolean;
+  id?: string;
+  elementType?: "hgroup" | "section";
+  backgroundColor?: string;
+  foregroundColor?: string;
+}
 const {
   elementType,
   id,
@@ -11,7 +18,7 @@ const Element = elementType || "section";
 
 <Element
   style={`--backgroundColor: var(--${backgroundColor}); --foregroundColor: var(--${foregroundColor});`}
-  id={id}
+  {id}
   class:list={[hasIntro && "has-intro", "is-container"]}
 >
   <slot name="top" />

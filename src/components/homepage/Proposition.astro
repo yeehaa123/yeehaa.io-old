@@ -1,17 +1,16 @@
 ---
+interface Props {
+  Content: any;
+  id: string;
+}
+
 import Section from "../Section.astro";
 import PropSection from "./proposition/Section.astro";
-const { Content, slug } = Astro.props;
+const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section
-    id={slug}
-    hasIntro
-    elementType="section"
-    backgroundColor="sun"
-    foregroundColor="curtains"
-  >
+  <Section {id} hasIntro elementType="section" backgroundColor="sun" foregroundColor="curtains">
     <Content components={{ section: PropSection }} />
   </Section>
   <svg viewBox="0 0 1727 427">

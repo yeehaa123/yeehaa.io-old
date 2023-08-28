@@ -1,11 +1,16 @@
 ---
+interface Props {
+  Content: any;
+  id: string;
+}
+
 import Section from "../Section.astro";
 import Text from "./cta/Text.astro";
-const { Content, slug } = Astro.props;
+const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section id={slug} backgroundColor="sun" foregroundColor="curtains">
+  <Section {id} backgroundColor="sun" foregroundColor="curtains">
     <Content components={{ p: Text }} />
   </Section>
   <svg viewBox="0 0 1728 690">

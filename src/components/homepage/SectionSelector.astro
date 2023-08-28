@@ -1,4 +1,9 @@
 ---
+interface Props {
+  Content: any;
+  slug: string;
+}
+
 import Default from "../Section.astro";
 import Tagline from "./Tagline.astro";
 import Problem from "./Problem.astro";
@@ -6,10 +11,10 @@ import Proposition from "./Proposition.astro";
 import Principles from "./Principles.astro";
 import CTA from "./CTA.astro";
 import Cases from "./Cases.astro";
-const props = Astro.props;
+const { slug: id, Content, ...props } = Astro.props;
 
 let Section;
-switch (props.slug) {
+switch (id) {
   case "tagline":
     Section = Tagline;
     break;
@@ -30,7 +35,8 @@ switch (props.slug) {
     break;
   default:
     Section = Default;
+    break;
 }
 ---
 
-<Section {...props} />
+<Section {id} {Content} {...props} />

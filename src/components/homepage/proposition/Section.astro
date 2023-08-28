@@ -1,4 +1,8 @@
 ---
+interface Props {
+  "data-heading-rank": string;
+  children: any;
+}
 const props = Astro.props;
 import Highlight from "./Highlight.astro";
 const rank = Number(props["data-heading-rank"]);

@@ -1,13 +1,18 @@
 ---
+interface Props {
+  Content: any;
+  id: string;
+}
+
 import Section from "../Section.astro";
 import PrincipleSection from "./principles/Section.astro";
 import Graph from "./principles/Graph.astro";
 import GraphLabel from "./principles/GraphLabel.astro";
-const { Content, slug } = Astro.props;
+const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section id={slug} hasIntro elementType="section" backgroundColor="purp" foregroundColor="white">
+  <Section {id} hasIntro elementType="section" backgroundColor="purp" foregroundColor="white">
     <Content components={{ section: PrincipleSection, ul: Graph, li: GraphLabel }} />
   </Section>
   <svg viewBox="0 0 1728 526">
@@ -23,6 +28,7 @@ const { Content, slug } = Astro.props;
   > * {
     padding-inline: var(--size-7);
   }
+
   svg {
     width: 100%;
     background-color: var(--purp);

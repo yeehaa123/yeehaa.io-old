@@ -1,4 +1,9 @@
 ---
+interface Props {
+  "data-heading-rank": string;
+  children: any;
+}
+
 const props = Astro.props;
 const rank = Number(props["data-heading-rank"]);
 ---
