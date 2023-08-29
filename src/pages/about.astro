@@ -14,5 +14,11 @@ const sections = await Promise.all(
 ---
 
 <Base>
-  {sections.map((s) => <Section {...s} />)}
+  {sections.map((s, i) => <Section {...s} index={i} />)}
 </Base>
+
+<style is:global>
+  #flaws {
+    background-color: var(--fire);
+  }
+</style>

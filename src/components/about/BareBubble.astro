@@ -1,0 +1,28 @@
+---
+interface Props {
+  Content: any;
+  id: string;
+  index: number;
+}
+import Dots from "../dots.astro";
+const { id, Content, index } = Astro.props;
+---
+
+<section {id}>
+  <Dots top="35px" amount={index} color="var(--fire)" position="initial" />
+  <Content />
+</section>
+
+<style>
+  section {
+    padding-inline: var(--size-6);
+    margin-block-start: var(--size-9);
+    color: var(--fire);
+
+    :global(p) {
+      font-size: var(--font-size-4);
+      font-weight: var(--font-weight-7);
+      margin-block-start: var(--size-3);
+    }
+  }
+</style>

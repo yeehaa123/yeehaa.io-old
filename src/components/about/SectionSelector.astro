@@ -2,12 +2,14 @@
 interface Props {
   Content: any;
   slug: string;
+  index: number;
 }
 
 import Default from "../Section.astro";
 import Quote from "./Quote.astro";
+import BareBubble from "./BareBubble.astro";
 import Bubble from "./Bubble.astro";
-const { slug: id, Content, ...props } = Astro.props;
+const { slug: id, Content, index } = Astro.props;
 
 // const [opening, background, context, flaws, conflict, problem] = rawSections;
 let Section;
@@ -25,7 +27,7 @@ switch (id) {
     Section = Bubble;
     break;
   case "conflict":
-    Section = Bubble;
+    Section = BareBubble;
     break;
   case "problem":
     Section = Quote;
@@ -36,4 +38,4 @@ switch (id) {
 }
 ---
 
-<Section {id} {Content} {...props} />
+<Section {id} {Content} {index} />

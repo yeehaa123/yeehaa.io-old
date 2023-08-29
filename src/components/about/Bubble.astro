@@ -2,16 +2,19 @@
 interface Props {
   Content: any;
   id: string;
+  index: number;
 }
-const { id, Content } = Astro.props;
+import Dots from "../dots.astro";
+const { id, Content, index } = Astro.props;
 ---
 
 <section class="bubble" {id}>
+  <Dots top="35px" amount={index} />
   <Content />
 </section>
 
 <style>
-  .bubble {
+  section {
     background-color: var(--purp);
     position: relative;
     container-type: size;

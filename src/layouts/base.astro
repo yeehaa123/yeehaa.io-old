@@ -1,4 +1,8 @@
 ---
+interface Props {
+  maxContainerWidth?: string;
+}
+
 import "open-props/normalize";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
@@ -9,6 +13,8 @@ const navItems = [
   { pageName: "POSTS", href: "/posts" },
   { pageName: "CONNECT", href: "/connect" },
 ];
+
+const { maxContainerWidth } = Astro.props;
 ---
 
 <html lang="en">
@@ -27,3 +33,10 @@ const navItems = [
     <Footer />
   </body>
 </html>
+
+<style define:vars={{ maxContainerWidth }}>
+  main {
+    max-inline-size: var(--maxContainerWidth, var(--size-lg));
+    margin-inline: auto;
+  }
+</style>

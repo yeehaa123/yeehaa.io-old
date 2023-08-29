@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 const entries = await getCollection("Work");
 ---
 
-<Base>
+<Base maxContainerWidth="var(--size-lg)">
   <ul>
     {
       entries.map(({ data, slug }) => (

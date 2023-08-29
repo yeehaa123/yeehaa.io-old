@@ -13,6 +13,6 @@ const sections = await Promise.all(
 );
 ---
 
-<Base>
+<Base maxContainerWidth="100%">
   {sections.map((s) => <Section {...s} />)}
 </Base>

@@ -4,16 +4,18 @@ import { getCollection } from "astro:content";
 const entries = await getCollection("Work");
 ---
 
-<Base>
-  <ul>
-    {
-      entries.map(({ data, slug }) => (
-        <li>
-          <a href={`/output/${slug}`} id={data.title}>
-            {data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+<Base maxContainerWidth="var(--size-lg)">
+  <section>
+    <ul>
+      {
+        entries.map(({ data, slug }) => (
+          <li>
+            <a href={`/output/${slug}`} id={data.title}>
+              {data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Base>

@@ -3,18 +3,19 @@ interface Props {
   color?: string;
   amount: number;
   top?: string;
+  position?: "absolute" | "initial";
 }
 
-const { amount, top, color } = Astro.props;
+const { amount, top, color, position = "absolute" } = Astro.props;
 ---
 
 <div class="dots">
   {Array.from({ length: amount }, () => <div class="dot" />)}
 </div>
 
-<style define:vars={{ top, color }}>
+<style define:vars={{ top, color, position }}>
   .dots {
-    position: absolute;
+    position: var(--position);
     top: var(--top, 35px);
     display: flex;
     gap: 10px;
