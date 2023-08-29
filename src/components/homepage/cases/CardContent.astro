@@ -21,7 +21,10 @@ const { class: className } = Astro.props;
   }
 
   section :global(p:last-of-type) {
+    display: flex;
     position: absolute;
+    justify-content: center;
+    text-align: center;
     padding: var(--size-5);
     bottom: var(--size-5);
   }

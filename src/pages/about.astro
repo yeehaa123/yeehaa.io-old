@@ -1,22 +1,18 @@
 ---
-import About from "../layouts/about.astro";
+import Base from "../layouts/base.astro";
 import { getCollection } from "astro:content";
+import Section from "../components/about/SectionSelector.astro";
 const entries = await getCollection("About");
-const rawSections = await Promise.all(
+const sections = await Promise.all(
   entries
     .sort((a, b) => a.data.order - b.data.order)
-    .map(async (e) => {
-      return e.render();
+    .map(async ({ slug, render }) => {
+      const rendered = await render();
+      return { slug, ...rendered };
     })
 );
-const [opening, background, context, flaws, conflict, problem] = rawSections;
 ---
 
-<About>
-  <opening.Content slot="hero" />
-  <background.Content slot="one" />
-  <context.Content slot="two" />
-  <flaws.Content slot="three" />
-  <conflict.Content slot="four" />
-  <problem.Content slot="five" />
-</About>
+<Base>
+  {sections.map((s) => <Section {...s} />)}
+</Base>

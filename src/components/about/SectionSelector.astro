@@ -1,0 +1,39 @@
+---
+interface Props {
+  Content: any;
+  slug: string;
+}
+
+import Default from "../Section.astro";
+import Quote from "./Quote.astro";
+import Bubble from "./Bubble.astro";
+const { slug: id, Content, ...props } = Astro.props;
+
+// const [opening, background, context, flaws, conflict, problem] = rawSections;
+let Section;
+switch (id) {
+  case "opening":
+    Section = Quote;
+    break;
+  case "background":
+    Section = Bubble;
+    break;
+  case "context":
+    Section = Bubble;
+    break;
+  case "flaws":
+    Section = Bubble;
+    break;
+  case "conflict":
+    Section = Bubble;
+    break;
+  case "problem":
+    Section = Quote;
+    break;
+  default:
+    Section = Default;
+    break;
+}
+---
+
+<Section {id} {Content} {...props} />

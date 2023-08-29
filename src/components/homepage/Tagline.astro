@@ -4,7 +4,7 @@ interface Props {
   id: string;
 }
 
-import ShoutOut from "./ShoutOut.astro";
+import ShoutOut from "../ShoutOut.astro";
 const { id, Content, ...props } = Astro.props;
 ---
 
@@ -22,6 +22,13 @@ const { id, Content, ...props } = Astro.props;
 </>
 
 <style>
+  header {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   svg {
     width: 100%;
   }

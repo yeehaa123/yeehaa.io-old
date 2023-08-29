@@ -22,10 +22,13 @@ const { Content, id } = Astro.props;
   </svg>
 </>
 
-<style>
-  > * {
-    padding-inline: var(--size-7);
+<style is:global>
+  #proposition {
+    padding-block: var(--size-9);
   }
+</style>
+
+<style>
   svg {
     width: 100%;
     background-color: var(--fire);

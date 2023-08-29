@@ -6,29 +6,29 @@ import "../styles/about/index.css";
 
 <Base>
   <article>
-    <header id="tagline" slot="hero" class="is-container">
+    <header id="tagline" slot="0" class="is-container">
       <hgroup class="has-quote">
         <slot name="hero" />
       </hgroup>
     </header>
     <section class="bubble bubble1">
       <Dots top="35px" amount={1} />
-      <slot name="one" />
+      <slot name="1" />
     </section>
     <section class="bubble bubble2">
       <Dots amount={2} />
-      <slot name="two" />
+      <slot name="2" />
     </section>
     <section class="bubble bubble3">
       <Dots amount={3} />
-      <slot name="three" />
+      <slot name="3" />
     </section>
     <section class="bubbleless">
       <Dots amount={4} color="var(--fire)" />
-      <slot name="four" />
+      <slot name="4" />
     </section>
     <section class="has-quote is-container" slot="five">
-      <slot name="five" />
+      <slot name="5" />
     </section>
   </article>
 </Base>
