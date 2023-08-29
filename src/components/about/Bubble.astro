@@ -3,8 +3,7 @@ interface Props {
   Content: any;
   id: string;
 }
-import ShoutOut from "../ShoutOut.astro";
-const { id, Content, ...props } = Astro.props;
+const { id, Content } = Astro.props;
 ---
 
 <section class="bubble" {id}>
