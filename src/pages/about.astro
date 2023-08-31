@@ -29,6 +29,7 @@ const sections = await Promise.all(
   @media (--md-n-above) {
     main {
       display: grid;
+      gap: var(--size-8);
       grid-template-columns: repeat(5, 1fr);
     }
     #opening {
@@ -51,6 +52,11 @@ const sections = await Promise.all(
 
     #conflict {
       grid-column: span 2;
+      align-items: flex-start;
+      justify-content: flex-end;
+      display: flex;
+      margin-block-end: 25%;
+      flex-direction: column;
     }
 
     #problem {
