@@ -8,6 +8,7 @@ const sections = await Promise.all(
     .sort((a, b) => a.data.order - b.data.order)
     .map(async ({ slug, render }) => {
       const rendered = await render();
+      console.log(slug);
       return { slug, ...rendered };
     })
 );
@@ -18,7 +19,42 @@ const sections = await Promise.all(
 </Base>
 
 <style is:global>
+  @import "open-props/media";
+  main {
+    display: grid;
+  }
   #flaws {
     background-color: var(--fire);
+  }
+  @media (--md-n-above) {
+    main {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    #opening {
+      grid-column: span 5;
+    }
+
+    #background {
+      grid-column: span 2;
+    }
+
+    #context {
+      grid-column: span 3;
+      margin-block-start: 100px;
+    }
+
+    #flaws {
+      grid-column: span 3;
+      margin-block-start: -100px;
+    }
+
+    #conflict {
+      grid-column: span 2;
+    }
+
+    #problem {
+      grid-column: span 5;
+    }
   }
 </style>

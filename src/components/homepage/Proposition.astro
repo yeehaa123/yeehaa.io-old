@@ -5,6 +5,7 @@ interface Props {
 }
 
 import Section from "../Section.astro";
+import Dots from "../dots.astro";
 import PropSection from "./proposition/Section.astro";
 const { Content, id } = Astro.props;
 ---
@@ -24,6 +25,7 @@ const { Content, id } = Astro.props;
 
 <style is:global>
   #proposition {
+    position: relative;
     padding-block: var(--size-9);
   }
 </style>

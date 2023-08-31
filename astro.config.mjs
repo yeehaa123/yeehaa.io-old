@@ -41,6 +41,9 @@ function links() {
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    viewTransitions: true,
+  },
   markdown: {
     remarkPlugins: [links, unwrapImages],
     rehypePlugins: [section]
