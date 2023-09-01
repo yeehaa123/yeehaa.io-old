@@ -9,7 +9,7 @@ const { id, Content, index } = Astro.props;
 ---
 
 <section class="bubble" {id}>
-  <Dots top="35px" amount={index} />
+  <Dots top="12%" amount={index} />
   <Content />
 </section>
 
@@ -27,43 +27,36 @@ const { id, Content, index } = Astro.props;
     margin: var(--size-2);
     aspect-ratio: 1/1;
     color: var(--white);
-    padding: var(--size-8);
+    padding: var(--size-9);
 
-    p,
-    ul,
-    li {
+    :global(p),
+    :global(ul),
+    :global(li) {
       color: var(--white);
       font-size: var(--font-size-1);
+      font-weight: var(--font-weight-4);
       text-align: left;
     }
 
-    strong {
+    :global(strong) {
       display: block;
       font-size: var(--font-size-3);
       font-weight: var(--font-weight-7);
     }
-    ul,
-    li {
+    :global(ul),
+    :globa(li) {
       margin: 0;
       padding: 0;
       text-indent: 0;
       list-style-type: 0;
     }
 
-    ul {
+    :global(ul) {
       padding-block-start: var(--size-5);
     }
 
     @container (width > 300px) {
       padding-inline: var(--size-10);
-      p,
-      ul,
-      li {
-        font-size: var(--font-size-3);
-      }
-      strong {
-        font-size: var(--font-size-5);
-      }
     }
   }
 </style>

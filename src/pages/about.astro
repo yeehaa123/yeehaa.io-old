@@ -22,22 +22,36 @@ const sections = await Promise.all(
   @import "open-props/media";
   main {
     display: grid;
+    max-inline-size: var(--size-lg);
+    margin-inline: auto;
   }
   #flaws {
-    background-color: var(--fire);
+    background-color: curtains;
+  }
+  #solution {
+    background-color: var(--sun);
+    p,
+    strong,
+    a {
+      color: var(--curtains);
+      font-weight: var(--font-weight-7);
+    }
+  }
+  #call-to-action {
+    background-color: var(--sun);
   }
   @media (--md-n-above) {
     main {
       display: grid;
-      gap: var(--size-8);
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
     }
     #opening {
-      grid-column: span 5;
+      grid-column: span 6;
     }
 
     #background {
-      grid-column: span 2;
+      grid-column: span 3;
+      margin-inline: var(--size-9);
     }
 
     #context {
@@ -46,7 +60,8 @@ const sections = await Promise.all(
     }
 
     #flaws {
-      grid-column: span 3;
+      background-color: var(--fire);
+      grid-column: span 4;
       margin-block-start: -100px;
     }
 
@@ -55,12 +70,28 @@ const sections = await Promise.all(
       align-items: flex-start;
       justify-content: flex-end;
       display: flex;
+      margin-inline-start: var(--size-5);
       margin-block-end: 25%;
       flex-direction: column;
     }
 
     #problem {
-      grid-column: span 5;
+      grid-column: span 6;
+    }
+
+    #solution {
+      grid-column: span 6;
+      strong {
+        align-self: flex-start;
+        font-size: var(--size-7);
+      }
+      p {
+        font-size: var(--size-5);
+      }
+    }
+
+    #call-to-action {
+      grid-column: span 6;
     }
   }
 </style>
