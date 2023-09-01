@@ -19,27 +19,26 @@ const { maxContainerWidth } = Astro.props;
 ---
 
 <html lang="en">
-  <html transition:animate="none">
-    <head>
-      <meta charset="utf-8" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <meta name="viewport" content="width=device-width" />
-      <meta name="generator" content={Astro.generator} />
-      <ViewTransitions />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
 
-      <title>Astro</title>
-    </head>
-    <body>
-      <Header {navItems} />
-      <main>
-        <slot />
-      </main>
-      <Footer />
-    </body><style define:vars={{ maxContainerWidth }}>
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header {navItems} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <style define:vars={{ maxContainerWidth }}>
       main {
         max-inline-size: var(--maxContainerWidth, var(--size-lg));
         margin-inline: auto;
       }
     </style>
-  </html>
+  </body>
 </html>
