@@ -29,6 +29,9 @@ const Element = elementType || "section";
 <style define:vars={{ backgroundColor }}>
   .is-container {
     background-color: var(--backgroundColor);
+    :global(a) {
+      color: var(--sun);
+    }
   }
   .is-container > :global(*) {
     max-inline-size: var(--size-lg);
