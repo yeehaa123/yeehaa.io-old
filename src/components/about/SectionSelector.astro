@@ -9,9 +9,9 @@ import Default from "../Section.astro";
 import Quote from "./Quote.astro";
 import BareBubble from "./BareBubble.astro";
 import Bubble from "./Bubble.astro";
+import BigBubble from "./BigBubble.astro";
 const { slug: id, Content, index } = Astro.props;
 
-// const [opening, background, context, flaws, conflict, problem] = rawSections;
 let Section;
 switch (id) {
   case "opening":
@@ -24,7 +24,7 @@ switch (id) {
     Section = Bubble;
     break;
   case "flaws":
-    Section = Bubble;
+    Section = BigBubble;
     break;
   case "conflict":
     Section = BareBubble;
@@ -33,7 +33,7 @@ switch (id) {
     Section = Quote;
     break;
   case "solution":
-    Section = Bubble;
+    Section = BigBubble;
     break;
   case "call-to-action":
     Section = Bubble;

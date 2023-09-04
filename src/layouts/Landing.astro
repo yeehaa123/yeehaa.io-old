@@ -1,0 +1,23 @@
+---
+interface Props {
+  collectionName: "Home" | "About";
+  maxContainerWidth?: string;
+  Section: any;
+}
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+const { collectionName, maxContainerWidth, Section } = Astro.props;
+const entries = await getCollection(collectionName);
+const sections = await Promise.all(
+  entries
+    .sort((a, b) => a.data.order - b.data.order)
+    .map(async ({ slug, render }) => {
+      const rendered = await render();
+      return { slug, ...rendered };
+    })
+);
+---
+
+<Base maxContainerWidth={maxContainerWidth}>
+  {sections.map((s, index) => <Section {...s} {index} />)}
+</Base>

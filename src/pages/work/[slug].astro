@@ -1,6 +1,7 @@
 ---
-import Base from "../../layouts/base.astro";
+import Base from "../../layouts/Base.astro";
 import { getCollection } from "astro:content";
+
 export async function getStaticPaths() {
   const blogEntries = await getCollection("Work");
   return blogEntries.map((entry) => {

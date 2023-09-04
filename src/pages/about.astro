@@ -1,22 +1,9 @@
 ---
-import Base from "../layouts/base.astro";
-import { getCollection } from "astro:content";
+import Landing from "../layouts/Landing.astro";
 import Section from "../components/about/SectionSelector.astro";
-const entries = await getCollection("About");
-const sections = await Promise.all(
-  entries
-    .sort((a, b) => a.data.order - b.data.order)
-    .map(async ({ slug, render }) => {
-      const rendered = await render();
-      console.log(slug);
-      return { slug, ...rendered };
-    })
-);
 ---
 
-<Base>
-  {sections.map((s, i) => <Section {...s} index={i} />)}
-</Base>
+<Landing collectionName="About" {Section} />
 
 <style is:global>
   @import "open-props/media";
@@ -25,11 +12,12 @@ const sections = await Promise.all(
     max-inline-size: var(--size-lg);
     margin-inline: auto;
   }
+
   #flaws {
-    background-color: curtains;
+    --backgroundColor: var(--fire);
   }
   #solution {
-    background-color: var(--sun);
+    --backgroundColor: var(--sun);
     p,
     strong,
     a {
@@ -40,6 +28,7 @@ const sections = await Promise.all(
   #call-to-action {
     background-color: var(--sun);
   }
+
   @media (--md-n-above) {
     main {
       display: grid;
@@ -60,7 +49,6 @@ const sections = await Promise.all(
     }
 
     #flaws {
-      background-color: var(--fire);
       grid-column: span 4;
       margin-block-start: -100px;
     }
@@ -80,6 +68,26 @@ const sections = await Promise.all(
     }
 
     #solution {
+      grid-column: span 6;
+      strong {
+        align-self: flex-start;
+        font-size: var(--size-7);
+      }
+      p {
+        font-size: var(--size-5);
+      }
+    }
+    #process {
+      grid-column: span 6;
+      strong {
+        align-self: flex-start;
+        font-size: var(--size-7);
+      }
+      p {
+        font-size: var(--size-5);
+      }
+    }
+    #benefits {
       grid-column: span 6;
       strong {
         align-self: flex-start;

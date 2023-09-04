@@ -1,18 +1,6 @@
 ---
-import Base from "../layouts/base.astro";
+import Landing from "../layouts/Landing.astro";
 import Section from "../components/homepage/SectionSelector.astro";
-import { getCollection } from "astro:content";
-const entries = await getCollection("Home");
-const sections = await Promise.all(
-  entries
-    .sort((a, b) => a.data.order - b.data.order)
-    .map(async ({ slug, render }) => {
-      const rendered = await render();
-      return { slug, ...rendered };
-    })
-);
 ---
 
-<Base maxContainerWidth="100%">
-  {sections.map((s) => <Section {...s} />)}
-</Base>
+<Landing collectionName="Home" maxContainerWidth="100%" {Section} />

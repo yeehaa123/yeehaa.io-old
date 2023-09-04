@@ -9,7 +9,7 @@ const { id, Content, index } = Astro.props;
 ---
 
 <section class="bubble" {id}>
-  <Dots top="12%" amount={index} />
+  {id !== "call-to-action" && <Dots top="50px" amount={index} />}
   <Content />
 </section>
 
