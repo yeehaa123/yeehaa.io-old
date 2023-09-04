@@ -6,7 +6,7 @@ interface Props {
   backgroundColor?: string;
 }
 import Dots from "../dots.astro";
-const { id, Content, index, backgroundColor } = Astro.props;
+const { id, Content, index } = Astro.props;
 ---
 
 <section class="bubble" {id}>
@@ -14,7 +14,7 @@ const { id, Content, index, backgroundColor } = Astro.props;
   <Content />
 </section>
 
-<style define:vars={{ backgroundColor }}>
+<style>
   @import "open-props/media";
   section {
     background-color: var(--backgroundColor);
@@ -24,7 +24,7 @@ const { id, Content, index, backgroundColor } = Astro.props;
     margin-block: var(--size-9);
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    padding-inline: var(--size-5);
+    padding-inline: var(--size-8);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +35,7 @@ const { id, Content, index, backgroundColor } = Astro.props;
       font-size: var(--font-size-1);
       font-weight: var(--font-weight-4);
       text-align: left;
-      color: var(--curtains);
+      color: var(--textColor);
     }
     &:before {
       content: "";
