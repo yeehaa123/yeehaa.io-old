@@ -53,7 +53,9 @@ h3 {
 
 h4 {
   font-size: var(--font-size-4);
+  margin-block-end: var(--size-5);
 }
+
 ul,
 li {
   margin: 0;

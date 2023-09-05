@@ -10,10 +10,23 @@ const { Content, id } = Astro.props;
 ---
 
 <>
+  <div>
+    <svg class="left side" viewBox="0 0 202 651" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M-1 0C-1 0 201.994 117.699 202 229.5C202 360.161 126.835 407.291 74.0294 494.463C-1 579.5 -1 663 -1 663V0Z"
+        fill="#2B0B19"></path>
+    </svg>
+    <svg class="right side" viewBox="0 0 203 651" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M203 0C203 0 0.00585938 117.699 -1.52588e-05 229.5C-1.52588e-05 360.161 75.1648 407.291 127.971 494.463C203 579.5 203 663 203 663V0Z"
+        fill="#2B0B19"></path>
+    </svg>
+  </div>
+
   <Section {id}>
     <Content components={{ p: Text }} />
   </Section>
-  <svg viewBox="0 0 1728 690">
+  <svg class="bottom" viewBox="0 0 1728 690">
     <g clip-path="url(#clip0_130_106)">
       <path
         d="M1747 0V1001H-19V0H-15.422C25.003 383.225 403.3 683.565 864 683.565C1324.7 683.565 1703 383.225 1743.42 0H1747Z"
@@ -23,12 +36,38 @@ const { Content, id } = Astro.props;
 </>
 
 <style>
-  svg {
+  @import "open-props/media";
+  div {
+    display: grid;
+    grid-template-columns: 17.5% 1fr 17.5%;
+    background-color: var(--primary-color);
+  }
+  .side {
     width: 100%;
+  }
+  .right {
+    grid-column: 3 / span 1;
+    justify-self: end;
+  }
+  .bottom {
+    width: 100%;
+  }
+  svg {
     background-color: var(--primary-color);
   }
 
   path {
     fill: var(--background-color);
+  }
+
+  @media (--sm-n-above) {
+    div {
+      grid-template-columns: 15% 1fr 15%;
+    }
+  }
+  @media (--md-n-above) {
+    div {
+      grid-template-columns: 12.5% 1fr 12.5%;
+    }
   }
 </style>

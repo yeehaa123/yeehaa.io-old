@@ -19,6 +19,15 @@ const { class: className } = Astro.props;
     padding-inline: var(--size-7);
     padding-block-start: 130px;
   }
+  section :global(a) {
+    color: var(--negative-text-color);
+  }
+  section :global(a:visited) {
+    color: var(--negative-text-color);
+  }
+  section :global(a:hover) {
+    color: var(--primary-color);
+  }
 
   section :global(p:last-of-type) {
     display: flex;

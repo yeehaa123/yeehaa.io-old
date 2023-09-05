@@ -15,6 +15,7 @@ const Element = elementType || "section";
 </Element>
 
 <style>
+  @import "open-props/media";
   .is-container {
     background-color: var(--background-color);
   }
@@ -44,6 +45,10 @@ const Element = elementType || "section";
 
     > :global(p:last-of-type) {
       padding-block: var(--size-9);
+    }
+  }
+  @media (--sm-n-above) {
+    .is-container {
     }
   }
 </style>
