@@ -8,7 +8,7 @@ const { id, Content, ...props } = Astro.props;
 ---
 
 <>
-  <ShoutOut {id} {Content} {...props} backgroundColor="fire" />
+  <ShoutOut {id} {Content} {...props} />
   <svg class="blob blob3" viewBox="0 0 1728 258">
     <g clip-path="url(#clip0_130_98)">
       <path
@@ -21,10 +21,10 @@ const { id, Content, ...props } = Astro.props;
 <style>
   svg {
     width: 100%;
-    background-color: var(--purp);
+    background-color: var(--secondary-color);
   }
 
   path {
-    fill: var(--fire);
+    fill: var(--tertiary-color);
   }
 </style>

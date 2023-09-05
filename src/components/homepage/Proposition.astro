@@ -10,7 +10,7 @@ const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section {id} hasIntro elementType="section" backgroundColor="sun" foregroundColor="curtains">
+  <Section {id} hasIntro elementType="section">
     <Content components={{ section: PropSection }} />
   </Section>
   <svg viewBox="0 0 1727 427">
@@ -24,7 +24,6 @@ const { Content, id } = Astro.props;
 
 <style is:global>
   #proposition {
-    position: relative;
     padding-block: var(--size-9);
   }
 </style>
@@ -32,10 +31,10 @@ const { Content, id } = Astro.props;
 <style>
   svg {
     width: 100%;
-    background-color: var(--fire);
+    background-color: var(--tertiary-color);
   }
 
   path {
-    fill: var(--sun);
+    fill: var(--primary-color);
   }
 </style>

@@ -9,7 +9,7 @@ import PropSection from "./cases/Section.astro";
 const { Content, id } = Astro.props;
 ---
 
-<Section {id} hasIntro elementType="section" backgroundColor="sun" foregroundColor="curtains">
+<Section {id} hasIntro elementType="section">
   <Content components={{ section: PropSection }} />
 </Section>
 

@@ -10,7 +10,7 @@ const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section {id} backgroundColor="sun" foregroundColor="curtains">
+  <Section {id}>
     <Content components={{ p: Text }} />
   </Section>
   <svg viewBox="0 0 1728 690">
@@ -25,10 +25,10 @@ const { Content, id } = Astro.props;
 <style>
   svg {
     width: 100%;
-    background-color: var(--sun);
+    background-color: var(--primary-color);
   }
 
   path {
-    fill: var(--curtains);
+    fill: var(--background-color);
   }
 </style>

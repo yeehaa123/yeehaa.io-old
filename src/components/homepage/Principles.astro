@@ -12,7 +12,7 @@ const { Content, id } = Astro.props;
 ---
 
 <>
-  <Section {id} hasIntro elementType="section" backgroundColor="purp" foregroundColor="white">
+  <Section {id} hasIntro elementType="section">
     <Content components={{ section: PrincipleSection, ul: Graph, li: GraphLabel }} />
   </Section>
   <svg viewBox="0 0 1728 526">
@@ -31,10 +31,10 @@ const { Content, id } = Astro.props;
 
   svg {
     width: 100%;
-    background-color: var(--purp);
+    background-color: var(--secondary-color);
   }
 
   path {
-    fill: var(--sun);
+    fill: var(--primary-color);
   }
 </style>

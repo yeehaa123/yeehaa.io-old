@@ -4,3 +4,26 @@ import Section from "../components/homepage/SectionSelector.astro";
 ---
 
 <Landing collectionName="Home" maxContainerWidth="100%" {Section} />
+
+<style is:global>
+  #proposition {
+    --background-color: var(--primary-color);
+  }
+  #problem-statement {
+    --background-color: var(--tertiary-color);
+  }
+  #principles {
+    --background-color: var(--secondary-color);
+  }
+  #cases {
+    --background-color: var(--primary-color);
+    --text-color: var(--curtains);
+    --negative-text-color: var(--white);
+  }
+
+  #call-to-action {
+    --background-color: var(--primary-color);
+    --text-color: var(--curtains);
+    --negative-text-color: var(--white):
+  }
+</style>

@@ -10,6 +10,12 @@
   --dark: #0f0d0d;
   --white: #ffffff;
   --fire: #e14616;
+  --text-color: var(--white);
+  --negative-text-color: var(--curtains);
+  --background-color: var(--curtains);
+  --primary-color: var(--sun);
+  --secondary-color: var(--purp);
+  --tertiary-color: var(--fire);
 }
 
 html,
@@ -17,20 +23,28 @@ body {
   --font-sans: "Montserrat Alternates", sans-serif;
   --font-accent: "Londrina Solid", sans-serif;
   height: 100%;
-  background-color: var(--curtains);
+  background-color: var(--background-color);
   font-family: var(--font-sans);
 }
 
-a {
-  color: var(--purp);
+p {
+  color: var(--white);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-4);
+  text-align: left;
 }
+
+a {
+  color: var(--secondary-color);
+}
+
 a:visited {
-  color: var(--purp);
+  color: var(--secondary-color);
 }
 
 a:hover {
   text-decoration: none;
-  color: var(--white);
+  color: var(--text-color);
 }
 
 h3 {
@@ -39,4 +53,11 @@ h3 {
 
 h4 {
   font-size: var(--font-size-4);
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: 0;
 }
