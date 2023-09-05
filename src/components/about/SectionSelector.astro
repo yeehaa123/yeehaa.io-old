@@ -10,6 +10,7 @@ import Quote from "./Quote.astro";
 import BareBubble from "./BareBubble.astro";
 import Bubble from "./Bubble.astro";
 import BigBubble from "./BigBubble.astro";
+import CTA from "./CTA.astro";
 const { slug: id, Content, index } = Astro.props;
 
 let Section;
@@ -36,7 +37,7 @@ switch (id) {
     Section = BigBubble;
     break;
   case "call-to-action":
-    Section = Bubble;
+    Section = CTA;
     break;
   default:
     Section = Default;

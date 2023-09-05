@@ -17,7 +17,7 @@ const { id, Content, index } = Astro.props;
 <style>
   @import "open-props/media";
   section {
-    background-color: var(--backgroundColor);
+    background-color: var(--background-color);
     position: relative;
     padding-block-start: var(--size-11);
     padding-block-end: var(--size-9);
@@ -35,7 +35,7 @@ const { id, Content, index } = Astro.props;
       font-size: var(--font-size-1);
       font-weight: var(--font-weight-4);
       text-align: left;
-      color: var(--textColor);
+      color: var(--text-color);
     }
     &:before {
       content: "";
@@ -46,7 +46,7 @@ const { id, Content, index } = Astro.props;
       left: 0;
       bottom: -100px;
       border-top-left-radius: 100px;
-      box-shadow: 0 -50px 0 0 var(--backgroundColor);
+      box-shadow: 0 -50px 0 0 var(--background-color);
     }
 
     &:after {
@@ -58,7 +58,7 @@ const { id, Content, index } = Astro.props;
       right: 0;
       bottom: -100px;
       border-top-right-radius: 100px;
-      box-shadow: 0 -50px 0 0 var(--backgroundColor);
+      box-shadow: 0 -50px 0 0 var(--background-color);
     }
     :global(strong) {
       display: block;

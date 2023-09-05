@@ -1,0 +1,12 @@
+---
+interface Props {
+  Content: any;
+  id: string;
+}
+
+import Text from "../homepage/cta/Text.astro";
+import Bubble from "./Bubble.astro";
+const { Content, id } = Astro.props;
+---
+
+<Bubble {id} {Content} components={{ p: Text }} />

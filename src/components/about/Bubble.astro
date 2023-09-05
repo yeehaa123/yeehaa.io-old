@@ -1,21 +1,22 @@
 ---
 interface Props {
   Content: any;
+  components?: any;
   id: string;
-  index: number;
+  index?: number;
 }
 import Dots from "../dots.astro";
-const { id, Content, index } = Astro.props;
+const { id, Content, index, components } = Astro.props;
 ---
 
 <section class="bubble" {id}>
-  {id !== "call-to-action" && <Dots top="50px" amount={index} />}
-  <Content />
+  {index && <Dots top="50px" amount={index} />}
+  <Content {components} />
 </section>
 
 <style>
   section {
-    background-color: var(--purp);
+    background-color: var(--background-color);
     position: relative;
     container-type: size;
     display: flex;
@@ -33,13 +34,6 @@ const { id, Content, index } = Astro.props;
       display: block;
       font-size: var(--font-size-3);
       font-weight: var(--font-weight-7);
-    }
-    :global(ul),
-    :globa(li) {
-      margin: 0;
-      padding: 0;
-      text-indent: 0;
-      list-style-type: 0;
     }
 
     :global(ul) {

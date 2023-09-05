@@ -9,7 +9,7 @@ const { id, Content, index } = Astro.props;
 ---
 
 <section {id}>
-  <Dots top="35px" amount={index} color="var(--fire)" position="initial" />
+  <Dots top="35px" amount={index} position="initial" />
   <Content />
 </section>
 
@@ -17,12 +17,12 @@ const { id, Content, index } = Astro.props;
   section {
     padding-inline: var(--size-6);
     margin-block-start: var(--size-9);
-    color: var(--fire);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     :global(p) {
+      color: var(--text-color);
       font-size: var(--font-size-4);
       font-weight: var(--font-weight-7);
       margin-block-start: var(--size-3);

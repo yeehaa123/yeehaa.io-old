@@ -13,21 +13,33 @@ import Section from "../components/about/SectionSelector.astro";
     margin-inline: auto;
   }
 
-  #flaws {
-    --backgroundColor: var(--fire);
-    --textColor: var(--white);
+  #background, #context {
+    --background-color: var(--secondary-color);
   }
+
+  #flaws {
+    --background-color: var(--tertiary-color);
+  }
+
+  #conflict {
+    --negative-text-color: var(--tertiary-color);
+    --text-color: var(--tertiary-color);
+  }
+
   #solution {
-    --backgroundColor: var(--sun);
-    --textColor: var(--curtains);
+    --background-color: var(--primary-color);
+    --text-color: var(--negative-text-color);
     p,
     strong,
     a {
       font-weight: var(--font-weight-7);
     }
   }
+
   #call-to-action {
-    background-color: var(--sun);
+    --background-color: var(--primary-color);
+    --text-color: var(--curtains);
+    --negative-text-color: var(--white):
   }
 
   @media (--md-n-above) {
