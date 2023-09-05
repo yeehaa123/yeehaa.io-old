@@ -11,16 +11,20 @@ const { class: className } = Astro.props;
   section {
     aspect-ratio: 1 / 1.5;
     display: flex;
-    position: relative;
     flex-direction: column;
     background-color: var(--secondary-color);
+    justify-content: space-between;
     color: var(--text-color);
     border-radius: 110px;
     padding-inline: var(--size-7);
     padding-block-start: 130px;
+    padding-block-end: var(--size-7);
   }
   section :global(a) {
     color: var(--negative-text-color);
+  }
+  section :global(p) {
+    text-align: center;
   }
   section :global(a:visited) {
     color: var(--negative-text-color);
@@ -31,7 +35,6 @@ const { class: className } = Astro.props;
 
   section :global(p:last-of-type) {
     display: flex;
-    position: absolute;
     justify-content: center;
     text-align: center;
     padding: var(--size-5);

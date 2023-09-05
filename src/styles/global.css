@@ -1,5 +1,6 @@
 @import "@fontsource/londrina-solid/300.css";
 @import "@fontsource/montserrat-alternates/400.css";
+@import "@fontsource/alata";
 @import "@fontsource/montserrat-alternates/700.css";
 @import "@fontsource/montserrat-alternates/900.css";
 
@@ -21,7 +22,9 @@
 html,
 body {
   --font-sans: "Montserrat Alternates", sans-serif;
-  --font-accent: "Londrina Solid", sans-serif;
+  --font-menu: "Londrina Solid", sans-serif;
+  --font-accent: "Alata", sans-serif;
+
   height: 100%;
   background-color: var(--background-color);
   font-family: var(--font-sans);

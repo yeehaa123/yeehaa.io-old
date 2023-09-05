@@ -13,6 +13,7 @@
   "devDependencies": {
     "@fontsource/londrina-solid": "^5.0.5",
     "@fontsource/montserrat-alternates": "^5.0.5",
+    "@fontsource/alata": "^5.0.8",
     "@hbsnow/rehype-sectionize": "^1.0.7",
     "autoprefixer": "^10.4.2",
     "open-props": "^1.3.8",
