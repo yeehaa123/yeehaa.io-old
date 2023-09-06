@@ -13,27 +13,33 @@ import BigBubble from "./BigBubble.astro";
 import CTA from "./CTA.astro";
 const { slug: id, Content, index } = Astro.props;
 
+let dots = 0;
 let Section;
 switch (id) {
   case "opening":
     Section = Quote;
     break;
   case "background":
+    dots = 1;
     Section = Bubble;
     break;
   case "context":
+    dots = 2;
     Section = Bubble;
     break;
   case "flaws":
+    dots = 3;
     Section = BigBubble;
     break;
   case "conflict":
+    dots = 4;
     Section = BareBubble;
     break;
   case "problem":
     Section = Quote;
     break;
   case "solution":
+    dots = 5;
     Section = BigBubble;
     break;
   case "call-to-action":
@@ -45,4 +51,4 @@ switch (id) {
 }
 ---
 
-<Section {id} {Content} {index} />
+<Section {id} {Content} index={dots} />

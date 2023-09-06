@@ -15,6 +15,7 @@ const { id, Content, index, components } = Astro.props;
 </section>
 
 <style>
+  @import "open-props/media";
   section {
     background-color: var(--background-color);
     position: relative;
@@ -31,17 +32,15 @@ const { id, Content, index, components } = Astro.props;
     padding: var(--size-9);
 
     :global(strong) {
+      font-size: 1.5rem;
       display: block;
-      font-size: var(--font-size-3);
-      font-weight: var(--font-weight-7);
     }
 
     :global(ul) {
       padding-block-start: var(--size-5);
     }
-
-    @container (width > 300px) {
-      padding-inline: var(--size-10);
+    @media (--md-n-above) {
+      padding: var(--size-10);
     }
   }
 </style>

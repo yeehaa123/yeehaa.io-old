@@ -30,10 +30,11 @@ const Element = elementType || "section";
     > :global(p:first-of-type),
     > :global(p:nth-of-type(2)) {
       text-align: center;
+      font-family: var(--font-accent);
       color: var(--text-color);
       line-height: var(--font-lineheight-2);
       font-size: var(--font-size-5);
-      font-weight: var(--font-weight-9);
+      font-weight: var(--font-weight-7);
     }
     > :global(p:last-of-type::after) {
       display: block;
@@ -41,6 +42,10 @@ const Element = elementType || "section";
       line-height: 0.5;
       font-size: var(--font-size-8);
       letter-spacing: var(--font-letterspacing-4);
+    }
+
+    :global(a) {
+      font-weight: var(--font-weight-9);
     }
 
     > :global(p:last-of-type) {

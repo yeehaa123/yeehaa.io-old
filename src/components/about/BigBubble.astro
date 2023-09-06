@@ -32,11 +32,18 @@ const { id, Content, index } = Astro.props;
     :global(p),
     :global(ul),
     :global(li) {
-      font-size: var(--font-size-1);
+      font-size: var(--font-size-2);
       font-weight: var(--font-weight-4);
       text-align: left;
       color: var(--text-color);
     }
+    :global(p:first-of-type) {
+      align-self: flex-start;
+    }
+    :global(a, a:visited) {
+      color: var(--text-color);
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -67,7 +74,6 @@ const { id, Content, index } = Astro.props;
     }
     :global(ul),
     :global(li) {
-      font-family: var(--font-accent);
       margin: 0;
       padding: 0;
       text-indent: 0;
@@ -77,20 +83,19 @@ const { id, Content, index } = Astro.props;
     :global(ul) {
       padding-block-start: var(--size-5);
     }
+    :global(li) {
+      max-inline-size: 100%;
+    }
   }
   @media (--md-n-above) {
     section {
       padding-block: var(--size-9);
-      padding-inline: var(--size-11);
+      padding-inline: var(--size-12);
       container-type: size;
       border-radius: 50%;
       overflow: hidden;
       margin: var(--size-2);
       aspect-ratio: 1/1;
-
-      @container (width > 300px) {
-        padding-inline: var(--size-10);
-      }
     }
   }
 </style>
