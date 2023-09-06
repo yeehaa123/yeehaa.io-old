@@ -16,7 +16,7 @@ const { id, Content, index } = Astro.props;
 
 <style>
   @import "open-props/media";
-  section {
+  .bubble {
     background-color: var(--background-color);
     position: relative;
     padding-block-start: var(--size-11);
@@ -37,6 +37,7 @@ const { id, Content, index } = Astro.props;
       text-align: left;
       color: var(--text-color);
     }
+
     :global(p:first-of-type) {
       align-self: flex-start;
     }
@@ -88,7 +89,7 @@ const { id, Content, index } = Astro.props;
     }
   }
   @media (--md-n-above) {
-    section {
+    .bubble {
       padding-block: var(--size-9);
       padding-inline: var(--size-12);
       container-type: size;

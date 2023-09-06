@@ -7,6 +7,4 @@ import ShoutOut from "../ShoutOut.astro";
 const { id, Content, ...props } = Astro.props;
 ---
 
-<>
-  <ShoutOut {id} {Content} {...props} />
-</>
+<ShoutOut {id} {Content} {...props} />
