@@ -2,7 +2,6 @@
 interface Props {
   Content: any;
   slug: string;
-  index: number;
 }
 
 import Default from "../Section.astro";
@@ -11,7 +10,7 @@ import BareBubble from "./BareBubble.astro";
 import Bubble from "./Bubble.astro";
 import BigBubble from "./BigBubble.astro";
 import CTA from "./CTA.astro";
-const { slug: id, Content, index } = Astro.props;
+const { slug: id, Content } = Astro.props;
 
 let dots = 0;
 let Section;
