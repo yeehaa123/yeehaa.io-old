@@ -11,9 +11,9 @@
     "astro": "astro"
   },
   "devDependencies": {
+    "@fontsource/alata": "^5.0.8",
     "@fontsource/londrina-solid": "^5.0.12",
     "@fontsource/montserrat-alternates": "^5.0.8",
-    "@fontsource/alata": "^5.0.8",
     "@hbsnow/rehype-sectionize": "^1.0.7",
     "autoprefixer": "^10.4.15",
     "open-props": "^1.5.15",
@@ -24,6 +24,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.0",
     "@astrojs/mdx": "^1.0.3",
     "@astrojs/vercel": "^4.0.5",
     "astro": "^3.0.12"
