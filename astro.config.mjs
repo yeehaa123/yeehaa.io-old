@@ -5,6 +5,7 @@ import section from "@hbsnow/rehype-sectionize";
 import unwrapImages from 'remark-unwrap-images';
 import slugify from "./src/utils/slugify";
 import mdx from "@astrojs/mdx";
+
 function transformer(ast) {
   visit(ast, 'link', visitor);
   function visitor(node) {
@@ -42,7 +43,6 @@ function links() {
 // https://astro.build/config
 export default defineConfig({
   experimental: {
-    viewTransitions: true,
   },
   markdown: {
     remarkPlugins: [links, unwrapImages],

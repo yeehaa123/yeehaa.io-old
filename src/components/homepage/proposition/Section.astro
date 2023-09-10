@@ -31,11 +31,11 @@ const { Element, className } = section;
       display: none;
     }
   }
-  .highlight {
+  :global(.highlight) {
     grid-column: span 4;
   }
-  @media (--md-n-above) {
-    .highlight {
+  @media (--lg-n-above) {
+    :global(.highlight) {
       grid-column: span 2;
     }
   }
