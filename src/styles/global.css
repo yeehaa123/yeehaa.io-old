@@ -19,6 +19,7 @@
   --tertiary-color: var(--fire);
 }
 
+::-webkit-scrollbar { display: none; }
 html,
 body {
   --font-accent: "Montserrat Alternates", sans-serif;
@@ -28,6 +29,8 @@ body {
   background-color: var(--background-color);
   font-family: var(--font-sans);
 }
+
+
 
 h1,
 h2,

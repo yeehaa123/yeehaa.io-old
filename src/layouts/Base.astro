@@ -38,7 +38,10 @@ const { maxContainerWidth } = Astro.props;
       main {
         max-inline-size: var(--maxContainerWidth, var(--size-lg));
         margin-inline: auto;
+        overflow-y: hidden; 
+        overflow-x: hidden; 
       }
+
     </style>
   </body>
 </html>
