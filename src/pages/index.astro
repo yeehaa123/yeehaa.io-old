@@ -6,9 +6,12 @@ import Section from "../components/homepage/SectionSelector.astro";
 <Landing collectionName="Home" maxContainerWidth="100%" {Section} />
 
 <style is:global>
+  #tagline {
+    --text-color: var(--text-color);
+  }
   #proposition {
     --background-color: var(--primary-color);
-    --text-color: var(--negative-text-color);
+    --text-color: var(--negativetext-color);
   }
   #problem-statement {
     --background-color: var(--tertiary-color);
