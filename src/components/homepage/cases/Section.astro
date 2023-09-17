@@ -38,11 +38,11 @@ const { Element, className } = section;
       display: none;
     }
   }
-  .card {
+  :global(.card) {
     grid-column: span 3;
   }
   @media (--lg-n-above) {
-    .card {
+    :global(.card) {
       grid-column: span 1;
     }
   }
