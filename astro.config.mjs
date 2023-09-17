@@ -49,6 +49,6 @@ export default defineConfig({
     rehypePlugins: [section]
   },
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({webAnalytics: {enabled: true}, speedInsights: { enabled: true}}),
   integrations: [mdx()]
 });
