@@ -11,20 +11,21 @@ interface Props {
   @import "open-props/media";
   ul {
     --width: 250px;
-    margin-block-start: var(--size-9);
     width: var(--width);
     height: var(--width);
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-image: url(/images/frequency.svg);
     position: relative;
     padding-inline-start: 0;
     transform: scale(0.65);
+    margin-block-end: var(--size-9);
   }
 
   @media (--md-n-above) {
     ul {
       transform: scale(1);
-      margin-block: var(--size-12);
+      margin-block-start: var(--size-12);
+      margin-block-end: var(--size-13);
     }
   }
 

@@ -12,6 +12,7 @@ const { class: className } = Astro.props;
 </section>
 
 <style>
+  @import "open-props/media";
   section {
     display: flex;
     flex-direction: column;
@@ -19,7 +20,7 @@ const { class: className } = Astro.props;
     max-inline-size: var(--size-sm);
     justify-self: center;
     text-align: center;
-    padding-inline: var(--size-5);
+    padding-inline: var(--size-8);
     padding-block: var(--size-5);
   }
 
@@ -27,8 +28,9 @@ const { class: className } = Astro.props;
     display: block;
     order: 1;
     padding-block: var(--size-6);
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-8);
     max-width: 90%;
-    padding-inline: var(--size-7);
   }
 
   section :global(a),
@@ -44,7 +46,15 @@ const { class: className } = Astro.props;
   section :global(p) {
     text-align: center;
     color: var(--text-color);
-    font-size: var(--font-size-4);
+    font-size: var(--font-size-3);
     order: 2;
+  }
+  @media (--md-n-above) {
+    section :global(h3) {
+      font-size: var(--font-size-5);
+    }
+    section :global(p) {
+      font-size: var(--font-size-4);
+    }
   }
 </style>

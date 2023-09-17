@@ -33,14 +33,16 @@ const Element = elementType || "section";
       font-family: var(--font-accent);
       color: var(--text-color);
       line-height: var(--font-lineheight-2);
-      font-size: var(--font-size-5);
+      font-size: var(--font-size-4);
       font-weight: var(--font-weight-7);
+      letter-spacing: var(--font-letterspacing-2);
     }
     > :global(p:last-of-type::after) {
       display: block;
       content: "..";
       line-height: 0.5;
       font-size: var(--font-size-8);
+      margin-top: var(--size-3);
       letter-spacing: var(--font-letterspacing-4);
     }
 
@@ -52,8 +54,12 @@ const Element = elementType || "section";
       padding-block: var(--size-9);
     }
   }
-  @media (--sm-n-above) {
-    .is-container {
+  @media (--md-n-above) {
+    .has-intro {
+      > :global(p:first-of-type),
+      > :global(p:nth-of-type(2)) {
+        font-size: var(--font-size-5);
+      }
     }
   }
 </style>
