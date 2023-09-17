@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/static';
+import vercel from '@astrojs/vercel/serverless';
 import { visit } from 'unist-util-visit';
 import section from "@hbsnow/rehype-sectionize";
 import unwrapImages from 'remark-unwrap-images';
@@ -48,7 +48,7 @@ export default defineConfig({
     remarkPlugins: [links, unwrapImages],
     rehypePlugins: [section]
   },
-  output: 'static',
+  output: 'server',
   adapter: vercel(),
   integrations: [mdx()]
 });
