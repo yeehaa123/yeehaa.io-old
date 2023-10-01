@@ -13,12 +13,9 @@ const { class: className } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--size-5);
-    overflow: hidden;
     align-items: center;
     justify-self: center;
     text-align: center;
-    margin-block-end: var(--size-9);
-    max-inline-size: 330px;
   }
 
   section :global(a) {
@@ -28,6 +25,7 @@ const { class: className } = Astro.props;
   section :global(h3:first-child) {
     display: none;
   }
+
   section :global(img) {
     aspect-ratio: 1/1;
     transform: rotate(45deg);
@@ -39,5 +37,6 @@ const { class: className } = Astro.props;
 
   section :global(h4) {
     display: block;
+    font-size: var(--font-size-3);
   }
 </style>

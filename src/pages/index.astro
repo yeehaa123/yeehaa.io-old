@@ -1,6 +1,8 @@
 ---
 import Landing from "../layouts/Landing.astro";
 import Section from "../components/homepage/SectionSelector.astro";
+
+export const prerender = true;
 ---
 
 <Landing collectionName="Home" maxContainerWidth="100%" {Section} />

@@ -18,7 +18,7 @@ switch (rank) {
     section = { Element: CardContent, className: "card-content" };
     break;
   default:
-    section = { Element: "section", className: "container" };
+    section = { Element: "section", className: "cards" };
 }
 
 const { Element, className } = section;
@@ -28,22 +28,20 @@ const { Element, className } = section;
 
 <style>
   @import "open-props/media";
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--size-8);
+  .cards {
+    display: flex;
+    gap: var(--size-5);
 
-    padding-block: var(--size-9);
     :global(h2) {
       display: none;
     }
   }
-  :global(.card) {
-    grid-column: span 3;
+  .cards {
+    flex-direction: column;
   }
   @media (--lg-n-above) {
-    :global(.card) {
-      grid-column: span 1;
+    .cards {
+      flex-direction: row;
     }
   }
 </style>

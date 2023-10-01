@@ -15,8 +15,10 @@ const { class: className } = Astro.props;
     background-color: var(--secondary-color);
     justify-content: space-between;
     color: var(--text-color);
+    text-wrap: balance;
     border-radius: 110px;
-    padding-inline: var(--size-7);
+    gap: var(--size-5);
+    padding-inline: var(--size-4);
     padding-block-start: 130px;
     padding-block-end: var(--size-7);
   }
@@ -26,6 +28,7 @@ const { class: className } = Astro.props;
   section :global(p) {
     color: var(--negative-text-color);
     text-align: center;
+    font-size: var(--font-size-1);
   }
   section :global(a:visited) {
     color: var(--negative-text-color);
@@ -43,7 +46,7 @@ const { class: className } = Astro.props;
 
   section :global(p:last-of-type a) {
     font-family: var(--font-accent);
-    font-size: var(--font-size-5);
+    font-size: var(--font-size-4);
     color: var(--primary-color);
     font-weight: var(--font-weight-7);
   }
